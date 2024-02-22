@@ -30,19 +30,20 @@ document.getElementById("box").addEventListener('wheel', function(){
 })
 
 document.addEventListener('keydown', function(e){
-    if (e.which === 66) {
+    console.log(e)
+    if (e.keyCode === 66) {
         boxColor.style.backgroundColor = "blue";
     }
-    else if (e.which === 82) {
+    else if (e.keyCode === 82) {
         boxColor.style.backgroundColor = "red";
 }
-    else if (e.which === 89) {
+    else if (e.keyCode === 89) {
     boxColor.style.backgroundColor = "yellow";
 }
-    else if (e.which === 79) {
+    else if (e.keyCode === 79) {
     boxColor.style.backgroundColor = "orange";
 }
-    else if (e.which === 71) {
+    else if (e.keyCode === 71) {
     boxColor.style.backgroundColor = "green";
 }
 });
