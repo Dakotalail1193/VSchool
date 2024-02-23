@@ -32,13 +32,12 @@
 //}
 //console.log(even)
 
-const fruit = ["banana", "orange", "apple", "kiwi", "pear", "peach"]
+const fruit = ["banana", "orange", "apple", "kiwi", "pear", "peach"],
+    remove = [0,2,4];
 
-var otherFruit =[]
-for (var i = 0; i <= fruit.length; i++){  
-    if (fruit[i] === fruit[0])
-    otherFruit.push(fruit[0],fruit[2],fruit[4])
+for (var i = remove.length - 1; i >= 0; i--){  
+   fruit.splice(remove[i],1);
     
+    console.log(fruit)
 }
 
-console.log(otherFruit)
