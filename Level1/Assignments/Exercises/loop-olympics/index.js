@@ -40,4 +40,4 @@ for (var i = remove.length - 1; i >= 0; i--){
     
     console.log(fruit)
 }
-
+console.log(remove)
