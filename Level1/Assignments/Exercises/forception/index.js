@@ -12,7 +12,7 @@ function forception(people, alphabet){
 
     for(var i = 0; i < people.length; i++){        
         for (var j = 0; j <= alphabet.length; j++){  
-            spliced.push(people[i ++] + " " + splitAlphabet);
+            spliced.push(people[i ++] + ": " + splitAlphabet);
             console.log(spliced)       
         }
 
