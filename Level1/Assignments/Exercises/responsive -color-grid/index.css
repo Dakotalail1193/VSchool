@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+div{
+    height: 200px;
+       
+    
+}
+ #box1 {
+    display: inline-block;
+    border: 2px solid white;
+    width: 100%;
+    
+    background-color: #F5C6D6;
+ }
+
+ #box2{
+    display: inline-block;
+    border: 2px solid white;
+    width: 25%;
+    background-color: #EE2E84;
+ }
+
+ #box3{
+    display: inline-block;
+    border: 2px solid white;
+    width: 25%;
+    background-color: #EE2E84;
+ }
+
+ #box4{
+    display: inline-block;
+    border: 2px solid white;
+    width: 25%;
+    background-color: #EE2E84;
+ }
+
+ #box5{
+    display: inline-block;
+    border: 2px solid white;
+    width: 25%;
+    background-color: #EE2E84;
+ }
+
+ #box6{
+    display: inline-block;
+    border: 2px solid white;
+    width: 50%;
+    background-color:#85CFD8;
+ }
+
+#box7{
+    display: inline-block;
+    border: 2px solid white;
+    width: 50%;
+    background-color:#85CFD8;
+}
+
+#box8{
+    display: inline-block;
+    border: 2px solid white;
+    width: 80%;
+    background-color:#8DC63F;
+}
+#box9{
+    display: inline-block;
+    border: 2px solid white;
+    width: 20%;
+    background-color:#E76E34;
+}
+
+@media screen and (max-width: 768px) {
+
+div{
+    height: 200px;
+}
+
+#box1 {
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   
+   background-color: #F5C6D6;
+}
+
+#box2{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color: #EE2E84;
+}
+
+#box3{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color: #EE2E84;
+}
+
+#box4{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color: #EE2E84;
+}
+
+#box5{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color: #EE2E84;
+}
+
+#box6{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color:#85CFD8;
+}
+
+#box7{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color:#85CFD8;
+}
+
+#box8{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color:#8DC63F;
+}
+#box9{
+   display: inline-block;
+   border: 2px solid white;
+   width: 100%;
+   background-color:#E76E34;
+}
+}
