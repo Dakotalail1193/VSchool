@@ -5,9 +5,12 @@
 
 div{
     height: 200px;
-       
-    
+        
 }
+
+ #boxes{
+   margin:50px 50px;
+ }
  #box1 {
     display: inline-block;
     border: 2px solid white;
