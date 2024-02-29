@@ -6,6 +6,7 @@ addItem.addEventListener("submit", (event) => {
 event.preventDefault()
 
 const purchase = addItem.title.value
+addItem.title.value = ""
 
 const shopping = document.createElement("li")
 
