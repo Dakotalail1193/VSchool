@@ -41,5 +41,5 @@ document.querySelector("#four").textContent = "That is awesome! I am excited to 
 //} else if (value === themeTwo) {
 //    document.querySelector(".left").style.color = "black",
 //    document.querySelector(".right").style.color = "red",
-//    console.log("theme two");
+//   console.log("theme two");
 //}})
