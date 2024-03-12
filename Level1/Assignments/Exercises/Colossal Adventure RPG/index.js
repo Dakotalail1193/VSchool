@@ -4,10 +4,6 @@ console.log(`You are ${characterName}, Advernturer of Agamon!`);
 
 let willContinue = true;
 
-
-
-
-
 class Character{
     constructor(name, healthPoints, attackPoints, inventory){
     this.name = name
