@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+</head>
+<body>
+    <h1>Welcome to Luxury Airlines!</h1>
+    <h2>Please fill out the applicable travel form.</h2>
+    <form name="travelForm">
+        <input type = "text" name = "firstName">
+        <label>First Name</label>
+        <br>
+        <input type = "text" name = "lastName">
+        <label >Last Name</label>
+        <br>
+        <input type="number" name = "age">
+        <label>Age</label>
+        <br>
+        <input type = "radio" name = "gender" value = "Male" id="male">
+        <label>Male</label>
+        <br>
+        <input type = "radio" name = "gender" value = "Female" id="Female">
+        <label>Female</label>
+        <br>
+        <select name ="travel-location">
+            <option value = "Select">Select</option>
+            <option value = "Hawaii">Hawaii</option>
+            <option value = "Tahiti">Tahiti</option>
+            <option value = "Iceland">Iceland</option>
+        </select>
+        <label>Destination of your dreams</label>
+        <br>
+        <label>Dietary restrictions:</label>
+        <input class = "diet" type="checkbox" name="vegan" id="vegan" value="Vegan">
+        <label>Vegan</label>
+        <input class = "diet" type="checkbox" name="gluten-free" id="gluten-free" value="Gluten-Free">
+        <label>Gluten-Free</label>
+        <input class = "diet" type="checkbox" name="none" id="none" value="None">
+        <label>None</label>
+        <br>
+        <button type="button" id="submit">Submit</button>        
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+#container{
+    display: flex;
+    justify-content: space-around;
+}
+
+#addition{
+    background-color: aqua;
+    padding: 50px;
+    justify-items: center;
+}
+
+#subtraction{
+    background-color: rgb(206, 26, 26);
+    padding: 50px;
+    justify-items: center;
+}
+
+#multiplication{
+    background-color: darkslategrey;
+    padding: 50px;
+    justify-items: center;
+}
