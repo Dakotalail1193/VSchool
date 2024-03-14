@@ -1,0 +1,84 @@
+* {
+    font-family:"Press Start 2P", system-ui;
+}
+
+body {
+    background-image: url(https://art.pixilart.com/9f12f5c03f414cf.png);
+    background-size:100%;
+    background-repeat: no;
+}   
+
+h1 {
+    background-color: rgb(230, 35, 16);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    margin:auto;  
+    
+}
+
+h2 {
+    text-align: center;
+    background-color: rgb(0, 155, 217);
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    margin:auto;  
+}
+
+h3 {
+    background-color:rgb(0, 155, 217);
+    padding: 10px;
+    border-radius: 10px;
+    margin:auto; 
+}
+
+h4{
+    text-align: center;
+}
+
+#pricing{
+   display:flex; 
+   justify-content: space-evenly;
+}
+
+#item{
+    background-color:rgb(68, 175, 53);
+    padding: 20px;
+    border-radius: 10px;
+    margin:auto;  
+}
+
+img{
+    height: 300px;
+    width: 300px;
+
+}
+
+#input {
+    background-color: rgb(252, 207, 0);
+    padding:10px;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    margin:auto;  
+}
+
+#total {
+    background-color: rgb(230, 35, 16);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    margin:auto;  
+}
+
+footer {
+    margin:auto;
+    background-color: rgb(252, 207, 0);
+    padding: 10px;
+    text-align: center;
+    width: 700px;
+    border-radius: 10px;
+}
