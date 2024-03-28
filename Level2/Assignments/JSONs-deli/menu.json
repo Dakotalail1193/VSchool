@@ -1,0 +1,79 @@
+{
+    "menu":[
+        {
+            "appetizers":[
+            {
+                "mozzerlla sticks":{
+                    "name":"Array of Sticks",
+                    "ingredients":["Mozzerlla Cheese", "breading"],
+                    "description":"5pc fried mozzerlla sticks"               
+                },
+                "krab rangoons":{
+                    "name": "Rowdy Rangoons",
+                    "ingredients":["imitation krab", "cream cheese", "chives"],
+                    "description":"6pc friend rangoons with wonton wrapper"
+                }
+            }    
+            ],
+            "cold sandwiches":[
+            {
+                "BLT":{
+                    "name":"BACON LETTUCE TOMATO",
+                    "ingredients":["BACON", "LETTUCE", "TOMATO"],
+                    "description":"read above"
+                },
+                "italian":{
+                    "name":"ol' reliable",
+                    "ingredients":["capicola", "motadella", "salami", "pepperoni", "prosciutto", "assorted veggies"],
+                    "description":"Italian Sandwich with cheese" 
+                }
+            }
+            ],
+            "hot sandwiches":[
+            {
+                "chicken parm":{
+                    "name":"Classic Cutlet",
+                    "ingredients":["Chicken Cutlet", "Mozzerlla Cheese","Marinara"],
+                    "description":"Toasted Chicken cutlet with marinara and cheese"
+                },
+                "meatball":{
+                    "name":"A SPICY MEATABALL",
+                    "ingredients":["Beef Meatballs", "Marinara","Cheese"],
+                    "description":"" 
+                }
+            }
+             ],
+            "desserts":[
+            {
+                "ice cream":{
+                    "name":"i scream for this",
+                    "flavors":["Vanilla", "Strawberry", "Chocolate"],
+                    "description":"Soft Serve Ice cream"
+                },
+                "key lime pie":{
+                    "name":"Pie for the keyes",
+                    "ingredients":["Lime", "Key", "Pie"],
+                    "description":"warm slice of Key Lime Pie" 
+                }
+            }
+            ],
+            "drinks":[
+            {
+                "fountain":{
+                    "name":"Pepsi Products",
+                    "drinks":["Pepsi", "Diet Pepsi", "Mtn Dew", "Starry"],
+                    "sizes":["Small", "Medium", "Large"]
+                },
+                "juice":{
+                    "name":"Fruit Juices",
+                    "ingredients":["Apple", "Pineapple","Orange"],
+                    "description":"Classic juices" 
+                }
+            }
+            ]  
+            
+        }
+    ]
+    
+    
+}
