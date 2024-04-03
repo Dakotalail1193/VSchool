@@ -41,7 +41,7 @@ function makeStrings(arr){
         if (arr.age >= 18) {
             return arr.name + "can go to The Matrix"
         } else {
-            return arr.name + "is under age!!"
+            return arr.name + " is under age!!"
         }
     })
 }
