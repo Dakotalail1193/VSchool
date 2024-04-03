@@ -1,0 +1,17 @@
+header {
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px, 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-bottom:1px solid black;
+
+}
+
+#header-section{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
