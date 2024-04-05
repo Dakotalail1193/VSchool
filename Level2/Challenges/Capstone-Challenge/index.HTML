@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
     <div id="title">"Organize, Prioritize, Conquer</div>
        
         <form name="form" id="new-form">
-            <h2>Add Todo Form</h2>
+            <h3>Add Todo Form</h3>
             <input class="input" placeholder="title" type="text" name="title">
             <input class="input" placeholder="price" type="number" name="price">
             <input class="input" placeholder="description" type="text" name="description">
@@ -30,10 +32,10 @@
 
         <div id="list">
             <div id="todo-item">
-                <h1 id="todo-title"></h1>
-                <p id="todo-details"></p>
-                <p id="todo-price"></p>
-                <img src="" id="todo-img">
+                <h1 id="todo-title">Mow the lawn</h1>
+                <p id="todo-details">Pay the neighbor kid</p>
+                <p id="todo-price">25</p>
+                <img src="https://hips.hearstapps.com/hmg-prod/images/mower-1568302588.jpg?crop=1.00xw:1.00xh;0,0&resize=640:*" id="todo-img">
                 <div id="buttons">
                     <button id="todo-buttons">Edit</button>
                     <button id="todo-buttons">Delete</button>
@@ -44,9 +46,8 @@
         </div>
     
     <footer>
-        <div id="footer-section">
-            <p>Facebook</p><p>Instagram</p><p>Twitter</p><p>Github</p>        
-        </div>
+          <p id="footer-section">Facebook</p><p id="footer-section">Instagram</p><p id="footer-section">Twitter</p><p id="footer-section">Github</p>        
+        
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="index.js"></script>
