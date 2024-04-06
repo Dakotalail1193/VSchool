@@ -110,7 +110,7 @@ header {
     gap: 10px;
 }
 
-#todo-title{
+.todo-title{
     border-bottom: 1px solid black;
 }
 
@@ -122,10 +122,11 @@ header {
     margin-bottom: 10px; 
 }
 
-#todo-buttons{
+.todo-buttons{
     background-color: lightblue;
     color: rgb(85, 81, 81);
     border-radius: 5px;
+    margin: 5px;
 }
 
 footer {
