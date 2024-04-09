@@ -122,7 +122,7 @@ header {
     margin-bottom: 10px; 
 }
 
-.todo-buttons{
+.edit-button, .delete-button{
     background-color: lightblue;
     color: rgb(85, 81, 81);
     border-radius: 5px;

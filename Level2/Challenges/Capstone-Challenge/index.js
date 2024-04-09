@@ -7,7 +7,11 @@ function getData(){
         .catch(error => console.log(error))
 }
 
+
+
 function listData (data){
+    clearList()
+    
     for (let i = 0; i < data.length; i++){
         const title = document.createElement('h1');
         title.textContent = data[i].title;
@@ -35,12 +39,12 @@ function listData (data){
         
         const edit = document.createElement("button");
         edit.textContent = "Edit";
-        edit.className = "todo-buttons";
+        edit.className = "edit-button";
         divButton.appendChild(edit);
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.className = "todo-buttons";
+        deleteButton.className = "delete-button";
         divButton.appendChild(deleteButton);
 
         const divComplete = document.createElement("div");
@@ -53,8 +57,28 @@ function listData (data){
 
         const check = document.createElement("input");
         check.type = "checkbox";
+        check.className = "checkbox"
         divComplete.appendChild(check);
 
+       
+       check.addEventListener('click', () => {
+        title.style.textDecoration = "line-through";
+        description.style.textDecoration = "line-through";
+        price.style.textDecoration = "line-through";
+       })
+           
+        deleteButton.addEventListener('click', () => {
+           axios.delete("https://api.vschool.io/dakotalail/todo/" + data[i]._id)
+           .then(response => getData())
+           .catch(error => console.log(error))
+        })   
+    }
+}
+
+function clearList(){
+    const list = document.getElementById("todo-item")
+    while(list.firstChild){
+        list.removeChild(list.firstChild)
     }
 }
 
@@ -64,13 +88,16 @@ todoForm.addEventListener("submit", function (event){
     event.preventDefault()
 
     const newTodo = {
-        item: todoForm.title.value,
+        title: todoForm.title.value,
         description: todoForm.description.value,
         price: todoForm.price.value,
         imgUrl: todoForm.imgUrl.value
+        
     }
 
+
     axios.post("https://api.vschool.io/dakotalail/todo", newTodo)
-        .then(res => getData())
+        .then(response => getData())
         .catch(error => console.log(error))
 })
+
