@@ -62,10 +62,15 @@ function listData (data){
 
        
        check.addEventListener('click', () => {
+        if (check.checked === true){
         title.style.textDecoration = "line-through";
         description.style.textDecoration = "line-through";
         price.style.textDecoration = "line-through";
-       })
+     }else {
+        title.style.textDecoration = "black";
+        description.style.textDecoration = "black";
+        price.style.textDecoration = "black"
+     }})
            
         deleteButton.addEventListener('click', () => {
            axios.delete("https://api.vschool.io/dakotalail/todo/" + data[i]._id)
