@@ -9,7 +9,14 @@ export default function App() {
     <div>
       <Navbar />
       <Hero />
-      <Card />
+      <Card
+      img='../src/Airbnb-componets/img/kz.png'
+      rating="5.0"
+      reviewCount={6}
+      country='USA'
+      title="Life lessons with Katie Zaferes"
+      price={136}
+      />
     </div> 
   )
 }
