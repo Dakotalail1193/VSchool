@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../src/Jokes-componets/JApp.jsx'
+import App from './Airbnb-componets/AbnbApp.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
