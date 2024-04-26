@@ -1,5 +1,5 @@
 import React from 'react'
-import Contact from './Contact'
+import Contact from './Contact-Componet/Contact'
 import './CApp.css'
 
 export default function App(){
@@ -37,4 +37,4 @@ export default function App(){
   )
 }
 // ADD THIS TO MAIN.JSX
-//import App from '../src/Contact-componet/CApp.jsx'
+//import App from '../src/Contact/CApp.jsx'

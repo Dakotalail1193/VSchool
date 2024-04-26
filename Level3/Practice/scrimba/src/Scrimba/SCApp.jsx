@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar.jsx'
-import Main from './Main.jsx'
+import Navbar from './Scrimba-Componets/Navbar.jsx'
+import Main from './Scrimba-Componets/Main.jsx'
 
 import './SCApp.css'
 
@@ -14,4 +14,4 @@ export default function App() {
 }
 
 //ADD THIS TO main.jsx
-//import App from './scrimba-componets/SCApp.jsx'
+//import App from './Scrimba/SCApp.jsx'

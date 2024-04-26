@@ -27,4 +27,4 @@ export default function App() {
 
 
 // ADD THIS TO MAIN.JSX
-//import App from './Airbnb-componets/AbnbApp.jsx'
+//import App from './Airbnb/AbnbApp.jsx'
