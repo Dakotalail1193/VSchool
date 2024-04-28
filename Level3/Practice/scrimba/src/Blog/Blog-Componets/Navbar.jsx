@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Navbar(){
     return (
-        <div>
+        <div className="Nav">
             <h3 className="Nav-title">Start Bootstrap</h3>
             <ul className="Nav-list">
                 <li className="Nav-listItems">HOME</li>
