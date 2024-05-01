@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: darkslategray;
+}
+
+.friend-list{       
+    display: flex;          
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    border-radius: 7px;
+    margin-top: 5%;
+}
+
+.friend{
+    
+    gap:20px;
+    background-color: aqua;
+    height:100%;
+    width:300px;
+    border-radius: 10px;
+    text-align: center;
+    
+   
+    
+}

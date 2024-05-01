@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../src/Vacation/VacationApp.jsx'
+import App from '../src/Friends/FriendApp.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
