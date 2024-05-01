@@ -1,7 +1,7 @@
 import React from "react";
 import Friend from "./Friend";
 import friends from "../friendsData";
-import Pets from "./Pets";
+
 
 
 
