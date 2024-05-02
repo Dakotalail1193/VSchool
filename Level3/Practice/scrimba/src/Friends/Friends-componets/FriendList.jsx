@@ -11,9 +11,9 @@ export default function FriendsList() {
         {friends.map((friend, index) => (
           <Friend
             key={index}
-            name={friend.name}
-            age={friend.age}
-            pets={friend.pets}
+            {
+              ...friend
+            }
           />
         ))}
       </div>
