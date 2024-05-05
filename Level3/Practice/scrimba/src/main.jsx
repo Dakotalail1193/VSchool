@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../src/Practice/PracApp'
+import App from '../src/Counter/CountApp'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
