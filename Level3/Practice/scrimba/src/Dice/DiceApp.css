@@ -1,0 +1,34 @@
+body{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-roll{
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+    width: 100px;
+    height:50px;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+
+.dice-roll:hover{
+    background-color:grey;
+}
+
+.dice{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;
+    border:5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #262626;
+    
+}
