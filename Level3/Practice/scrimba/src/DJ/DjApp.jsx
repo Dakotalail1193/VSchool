@@ -1,21 +1,19 @@
 import React from "react"
 import Squares from './componets/Squares'
+import Box from './componets/Box'
 import './DjApp.css'
 
-export default function App(props){
-    const [box, setBox] = React.useState(["white", "white", "white", "white"])
+export default function App(){
 
-    const styles = {
-        backgroundColor:props.dark ? "black" : "white"
-    }
+    const [boxes, setBoxes] = React.useState(["white", "white", "white", "white"])
 
-    const boxElements = box.map (box => (
-        <div style={styles} className="box" key={box.id}></div>
+    const boxElements = boxes.map (box => (
+        <Box key={box.id} dark={box.dark} />
     ))
 
     return (
-        <div className="container">
-            {boxElements}
+        <div>
+           {boxElements}
             <button>DJ Small</button>
             <button>Party Dj</button>
             <button>Left Blue</button>
@@ -24,7 +22,6 @@ export default function App(props){
             <button>Big DJ two</button>
             <button>Big DJ three</button>
             <button>Big DJ four</button>
-            
         </div>
     )
 }
