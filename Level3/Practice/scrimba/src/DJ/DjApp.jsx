@@ -1,20 +1,27 @@
 import React from "react"
 import Squares from './componets/Squares'
-import Box from './componets/Box'
 import './DjApp.css'
 
 export default function App(){
 
-    const [boxes, setBoxes] = React.useState(["white", "white", "white", "white"])
+    const [colors, setColors] = React.useState(["white", "white", "white", "white"])
+       
 
-    const boxElements = boxes.map (box => (
-        <Box key={box.id} dark={box.dark} />
+    function smallClick(){
+        const newColors = colors.map(colors => (colors === "white" ? "black" : "white"));
+        setColors(newColors);
+    }
+
+    const boxElements = Squares.map (box => (
+        <div style={{colors}} key={box.id} className="box" />
     ))
 
+    
+
     return (
-        <div>
+        <div className="container">
            {boxElements}
-            <button>DJ Small</button>
+            <button onClick={smallClick} >DJ Small</button>
             <button>Party Dj</button>
             <button>Left Blue</button>
             <button>Right Blue</button>

@@ -6,7 +6,7 @@
 
 const [color1, setColor1] = useState("pink")
 
-    setColor(prevColor => prevColor === "pink" ? "blue" : pink)
+    setColor(prevColor => prevColor === "pink" ? "blue" : "pink")
 
     const [people, setPeople] = useState([
         {
