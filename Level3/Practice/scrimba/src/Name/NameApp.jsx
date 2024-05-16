@@ -1,42 +1,37 @@
-import React from "react"; 
+import React from "react";
 import './NameApp.css'
 
-export default function App(){
-    const [entry, setEntry] = React.useState(["Bob Jones", "John Doe"])
+export default function App() {
+    const [firstName, setFirstName] = React.useState("")
+    const [allName, setAllName] = React.useState([])
+
 
     
-    function handleChange(event){
-        const {name, value} = event.target
-        setEntry ((prevEntry) => {
-            return {
-                ...prevEntry,
-                [name]: value,
-            };
-        });
-    };
-
-    function handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault();
-        setEntry((prevEntry) =>{
-            return [...prevEntry, name.value]
-        })
+        setAllName(
+            prevNames =>
+                [...prevNames, firstName]
+        );
+        setFirstName("") 
     }
-     
-    const nameList = entry.map(entry => <li key={entry}>{entry}</li>)
+
+    const nameList = allName.map((entry) => <li key={entry}>{entry}</li>)
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <input
-                type ="text"
-                placeholder="Name"
-                className="input"
-                
-                name="name"
+                    type="text"
+                    placeholder="Name"
+                    className="input"
+                    onChange={event => setFirstName(event.target.value)}
+                    name="firstName"
+                    value={firstName}
                 />
                 <button>Submit</button>
             </form>
 
-            <h1 className="name"></h1>
+            <h1 className="name">{firstName}</h1>
             <ol className="list">{nameList}</ol>
         </div>
     )
