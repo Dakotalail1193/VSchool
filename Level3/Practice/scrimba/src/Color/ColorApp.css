@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    height:100%;
+    min-height:100%;
+}
+
+.color{
+    height:911px;
+}
+
+button{
+    display: flex;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 50%;
+    width: 100px;
+}
