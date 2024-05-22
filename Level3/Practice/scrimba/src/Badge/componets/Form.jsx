@@ -27,7 +27,7 @@ export default function Form() {
     }
 
     function handleSubmit(event) {
-        event.preventdefault()
+        event.preventDefault()
         setBadgeArray(prevBadgeArray => {
             return [...prevBadgeArray,
             {
@@ -43,7 +43,7 @@ export default function Form() {
     }
 
     const badgeElements = badgeArray.map((badge, index) => {
-        return <li> <Badge key={index} {...badge} /> </li>
+        return <li> <Badge key={index} {...badge} /> </li> 
     })
 
     return (
