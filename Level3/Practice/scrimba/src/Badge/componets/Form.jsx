@@ -15,7 +15,7 @@ export default function Form() {
         }
     )
     const [badgeArray, setBadgeArray] = React.useState([])
-
+    console.log(formData)
     function handleChange(event) {
         const { name, value } = event.target
         setFormData(prevFormData => {

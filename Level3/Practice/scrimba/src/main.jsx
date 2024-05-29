@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './Color/ColorApp.jsx'
+import App from './Memegenerator/MemeApp.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
