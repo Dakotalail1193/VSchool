@@ -2,17 +2,19 @@ const readline = require('readline-sync');
 const input = readline.question('What phrase would you like to encrypt? ').toLowerCase();
 const shift = parseInt(readline.question('How many letters would you like to shift? '));
 
-function caesarCipher(str, shift) {
+function caesarCipher(string, shift) {
     var output = "";
      
-    // Loop through each character in the input string
-    for (var i = 0; i < str.length; i++) {
-      var code = str[i].charCodeAt();
+    // loop through each character in the input
+    for (var i = 0; i < string.length; i++) {
+      var code = string[i].charCodeAt();
        
-      // Check if the character is a letter
+      // make sure its a letter
       if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
-        // Shift the letter by the shift amount, wrapping around the alphabet if necessary
+      
         code += shift;
+        if ((code > 90 && string[i] <='Z'|| code > 122))
+          code -= 26;
       }
        
       // Add the new character to the output string
