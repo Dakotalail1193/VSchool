@@ -1,5 +1,5 @@
 import React from "react";
-import memeData from "../memeData";
+import MemeList from "./MemeList";
 
 export default function Meme() {
 
@@ -10,6 +10,10 @@ export default function Meme() {
     })
 
     const [allMemeImages, setAllMemeImages] = React.useState([])
+
+    const [memeList, setMemeList] = React.useState([])
+
+    
 
     React.useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
@@ -34,11 +38,50 @@ export default function Meme() {
         const {name, value} = event.target
         setMeme(prevMeme => ({
            ...prevMeme,
-           [name]: value
-
-            
+           [name]: value            
         }))
     }
+
+    function generateId(){
+        return Math.floor(Math.random() * (100000 - 1) +1);
+    }
+
+    function save(){
+        setMemeList((prevMemeList) => {
+            return [ ...prevMemeList,
+                {
+                    topText: meme.topText,
+                    bottomText:meme.bottomText,
+                    randomImage:meme.randomImage,
+                    _id:generateId(),
+                    editing: false
+                }]
+        })        
+    }
+
+    function handleDelete(id){
+      setMemeList(prevState => prevState.filter(meme => meme._id != id))
+    }
+
+    function handleEdit(id){
+         setMemeList(prevState => prevState.map(meme => meme._id === id ? editMeme : meme))
+    }
+
+    const [editMeme, setEditMeme] = React.useState({
+                    topText: "",
+                    bottomText:"",
+                    randomImage:"",                    
+                    
+    })
+
+    function handleEdit(id){
+
+    }
+    
+    const memeListElements = memeList.map((meme, index) => {
+        return <li><MemeList key={index} handleDelete = {handleDelete} handleEdit = {handleEdit} {...meme} /> </li>
+    })
+
 
     return (
         <main>
@@ -68,6 +111,13 @@ export default function Meme() {
                 <img src={meme.randomImage} className="meme-img" />
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
+            <button className="save" onClick={save}>Save</button>
+            <div className="saved-memes">
+                <h2 className="saved-header">Saved Memes</h2>
+                <ul>
+                    {memeListElements}
+                </ul>
             </div>
         </main>
     )
