@@ -54,32 +54,39 @@ export default function Meme() {
                     bottomText:meme.bottomText,
                     randomImage:meme.randomImage,
                     _id:generateId(),
-                    editing: false
+                    
                 }]
         })        
+    }
+
+    function editMemes(id) {
+        setMemeList(prevMemeList => {
+            return prevMemeList.map((currentMeme) => {
+                return currentMeme._id === id ? {
+                    ...currentMeme,
+                    
+                } :
+                    currentMeme
+            })
+        })
     }
 
     function handleDelete(id){
       setMemeList(prevState => prevState.filter(meme => meme._id != id))
     }
 
-    function handleEdit(id){
-         setMemeList(prevState => prevState.map(meme => meme._id === id ? editMeme : meme))
-    }
+    // function handleEdit(id){
+    //       setMemeList(prevState => prevState.map(meme => meme._id === id ? setMemeList : meme));
+    //       setIsEditing(prevState ? prevState : !prevState)
+         
+    // }
 
-    const [editMeme, setEditMeme] = React.useState({
-                    topText: "",
-                    bottomText:"",
-                    randomImage:"",                    
-                    
-    })
-
-    function handleEdit(id){
-
-    }
     
+
+    
+
     const memeListElements = memeList.map((meme, index) => {
-        return <li><MemeList key={index} handleDelete = {handleDelete} handleEdit = {handleEdit} {...meme} /> </li>
+         return <li><MemeList key={index} handleDelete = {handleDelete} editMemes = {editMemes} {...meme} /> </li>
     })
 
 
