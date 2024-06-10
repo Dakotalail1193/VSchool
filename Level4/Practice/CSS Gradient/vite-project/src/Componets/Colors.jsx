@@ -1,24 +1,52 @@
 import React from "react";
-import Selection from './Selection'
 
-export default function Colors(formData, handleForm){
+
+export default function Colors(){
+    const [formData, setFormData] = React.useState({
+        color1: "#ffffff",
+        color2: "#000000",
+        angle:90
+      });
+      
+      function handleForm(e){
+        const {name, value} = e.target;
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: value
+          
+        }
+      ));
+      }
+      
     return (
+
+        
         <div className="form-container">
             <h2>Select your colors</h2>
             <form className="form">
-            <Selection
-            handleForm={handleForm}
+            <input
+            type="color"
+            onChange={handleForm}
             name="color1"
             value={formData.color1}
             />
 
-            <Selection
-            handleForm={handleForm}
+            <label>Color 1</label>
+
+            <br/>
+            
+
+            <input
+            type="color"
+            onChange={handleForm}
             name="color2"
             value={formData.color2}
             />
+
+            <label> Color 2 </label>
+
             <div className="angle">
-                <label for="angle">Angle</label>
+                
                 <input
                 type="number"
                 id="angle"
@@ -28,9 +56,30 @@ export default function Colors(formData, handleForm){
                 value={formData.angle}
                 onChange={handleForm}
                 />
+                <label for="angle">Angle</label>
 
             </div>
             </form>
+            <hr/>
+            <br/>
+            <div style={{
+                background: `linear-gradient(${formData.angle}deg, ${formData.color1}, ${formData.color2})`,
+                }}
+                className="preview-square"/>
+                <br/>
+                <div className="preview-text">
+                <span>
+                    -background: {`linear-gradient(${formData.angle}deg, ${formData.color1}, ${formData.color2});`}
+                </span>
+                <br/>
+                <span>
+                    -moz-background: {`linear-gradient(${formData.angle}deg, ${formData.color1}, ${formData.color2});`}
+                </span>
+                <br/>
+                <span>
+                    -webkit: {`linear-gradient(${formData.angle}deg, ${formData.color1}, ${formData.color2});`}
+                </span>
+            </div>
 
         </div>
     )

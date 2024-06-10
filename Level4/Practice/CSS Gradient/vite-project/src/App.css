@@ -7,3 +7,20 @@ top:0;
 text-align:center;
 color:rgb(56, 56, 56);
 }
+
+.preview-square {
+  height: 220px;
+  width: 450px;
+  border: 1px solid #eaeaea;
+}
+
+.preview-text{
+  border: 1px solid black;
+  width: 420px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
