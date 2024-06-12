@@ -1,20 +1,36 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 
 import './App.css'
 
-function App() {
+export default function App() {
   const [text, setText] = React.useState("")
   const [timer, setTimer] = React.useState(5)
   const [isTimerOn, setIsTimerOn] = React.useState(false)
+  const [wordCount, setWordCount] = React.useState(0)
+  const textBoxRef = useRef(null)
 
   function handleChange(e){
     const {value} = e.target
     setText(value)
   }
 
-  function wordCount(text) {
+  function wordCounter(text) {
     const array = text.trim().split(/\s+/)
     return array.length
+  }
+
+  function startClock(){
+    setIsTimerOn(true)
+    setTimer(5)
+    setText("")
+    textBoxRef.current.disabled = false
+    textBoxRef.current.focus()
+  }
+
+  function endGame(){
+    setIsTimerOn(false)
+    const count = wordCounter(text)
+    setWordCount(count)
   }
 
  useEffect(() => {
@@ -23,26 +39,31 @@ function App() {
       setTimer(time => time - 1)
   }, 1000)
   } else {
-    setIsTimerOn(false)
-  }
+    endGame()
+    }
  }, [timer, isTimerOn] )
 
-console.log(isTimerOn)
+
    return (  
     
       <div>
             <h1>How fast do you type?</h1>
             <textarea 
+            ref={textBoxRef}
             onChange={handleChange} 
             value={text}
+            disabled={!isTimerOn}
             />
             <h4>Time remaining: {timer}</h4>
-            <button onClick={() => setIsTimerOn(true)} >Start</button>
-            <h1>Word count: ???</h1>
+            <button
+              onClick={startClock}
+              disabled={isTimerOn}
+              >
+              Start</button>
+            <h1>Word count:{wordCount}</h1>
         </div>
         
     
   )
 }
 
-export default App
