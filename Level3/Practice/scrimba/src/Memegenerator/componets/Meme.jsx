@@ -75,15 +75,7 @@ export default function Meme() {
       setMemeList(prevState => prevState.filter(meme => meme._id != id))
     }
 
-    // function handleEdit(id){
-    //       setMemeList(prevState => prevState.map(meme => meme._id === id ? setMemeList : meme));
-    //       setIsEditing(prevState ? prevState : !prevState)
-         
-    // }
-
-    
-
-    
+      
 
     const memeListElements = memeList.map((meme, index) => {
          return <li><MemeList key={index} handleDelete = {handleDelete} editMemes = {editMemes} {...meme} /> </li>
