@@ -1,59 +1,105 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { UglyContext } from "./ContextProvider";
+import UglyThingList from "./UglyThingList";
 
 function Thing(props){
-    const {handleDelete, handleEditChange, editedThings, setEditedThings, saveEdit, isEditing, setIsEditing} = useContext(UglyContext)
+    const {handleDelete, editThing, handleEditChange, editedThings, setEditedThings, isEditing, setIsEditing, formData, setFormData, uglyArray,saveEdit, beginEdit} = useContext(UglyContext)
 
-    function editThing(props){
-        setIsEditing(isEditing === props._id ? -1 : props._id)
-        setEditedThings({
-            title: props.title,
-            imgUrl: props.imgUrl,
-            description: props.description
-        })
+    
+
+    //console.log(editedThings.title)
+
+    
+    // console.log(isEditing)
+    // function editThing(id){
+    //     toggleEdit()
+    //     // setIsEditing(isEditing === props._id ? -1 : props._id)
+    //     setEditedThings({
+    //         title: formData.title,
+    //         imgUrl: formData.imgUrl,
+    //         description: formData.description
+    //     })   
+    //}
+
+
+
+    function apiDelete(event){
+        event.preventDefault()        
+        handleDelete(props._id)
     }
 
-    retuen (
+    
+
+    
+if(props.isEditing){
+    console.log(props.isEditing, 'line 35 return')
+    return (
         <>
             <div className="thing-container">
-                {isEditing === props._id ? 
-                    <input   value={editedThings.title}
+               
+                <form>
+                    <input value={editedThings.title}
                     onChange={handleEditChange}
                     name = "title"
                     placeholder="Title"
                     className="edited-thing" 
-                    /> : <h1 className="title">
-                    Title: {props.title}
-                    </h1>
-                }
+                    />
+                
 
-                {isEditing === props._id ? 
-                    <input   value={editedThings.imgUrl}
+              
+                    <input value={editedThings.imgUrl}
                     onChange={handleEditChange}
                     name = "imgUrl"
                     placeholder="Image Url"
                     className="edited-thing" 
-                    /> : <img className="img"
-                    src = {props.imgUrl}
-                    />
-                }
-                {isEditing === props._id ? 
-                    <input   value={editedThings.description}
+                    /> 
+                
+              
+                    <input value={editedThings.description}
                     onChange={handleEditChange}
                     name = "description"
                     placeholder="Description"
                     className="edited-thing" 
-                    /> : <h1 className="description">
-                    Description: {props.description}
-                    </h1>
-                }
+                    />
 
-                <button className="button" onClick={handleDelete}>Delete</button>
+                    </form> 
+                
 
-                {isEditing === props._id ?
-                    <button className="button" onClick={saveEdit}>Save</button> :<button className="button" onClick = {editThing}>Edit</button>}
+                <button className="button" onClick={apiDelete}>Delete</button>
+
+                
+                    <button className="button" onClick={() => saveEdit(props._id)}>Save</button> 
             </div>
         </>
-    )
+    )}
+
+else {
+    
+    return (  <div className="thing-container">
+       
+        <form>
+            <h1 className="title">
+            Title: {props.title}
+            </h1>
+        
+
+      
+             <img className="img"
+            src = {props.imgUrl}
+            />
+        
+      
+             <h1 className="description">
+            Description: {props.description}
+            </h1>
+
+            </form> 
+        
+
+        <button className="button" onClick={apiDelete}>Delete</button>
+
+        <button className="button" onClick = { () => beginEdit(props._id)}>Edit</button>
+    </div>)
+}
 
 } export default Thing

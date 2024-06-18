@@ -1,10 +1,14 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {UglyContext} from './ContextProvider'
 
 
+
 function Form(){
+    
 
     const {uglyThing, handleChange, handleSubmit} = useContext(UglyContext)
+
+    
 
     return(
         <>
@@ -19,7 +23,7 @@ function Form(){
             />
 
             <input className='form-input'
-                    type="text"
+                    type="url"
                     placeholder='Img URL'
                     name="imgUrl"
                     value={uglyThing.imgUrl}
@@ -30,8 +34,8 @@ function Form(){
                 <input className='form-input'
                     type="text"
                     placeholder='Description'
-                    name="Description"
-                    value={uglyThing.Description}
+                    name="description"
+                    value={uglyThing.description}
                     onChange={handleChange}
                     required
                 />
