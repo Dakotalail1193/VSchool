@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    height: 50px;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: aqua;
+    }
+    
+button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20px;
+}
+
+h1{
+    text-align: center;
+    position: relative;
+    top:100px;
+    
+}
+
+* .home{
+    background-color: cadetblue;
+    height: 860px;
+}
+
+* .services{
+    background-color: rgb(250, 128, 13);
+   height: 860px;
+}
+
+* .about{
+    background-color: fuchsia;
+    height: 860px;
+}
+    
+   
