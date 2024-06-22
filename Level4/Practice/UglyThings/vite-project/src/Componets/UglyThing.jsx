@@ -1,34 +1,14 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import { UglyContext } from "./ContextProvider";
-import UglyThingList from "./UglyThingList";
+
 
 function Thing(props){
-    const {handleDelete, editThing, handleEditChange, editedThings, setEditedThings, isEditing, setIsEditing, formData, setFormData, uglyArray,saveEdit, beginEdit} = useContext(UglyContext)
-
-    
-
-    //console.log(editedThings.title)
-
-    
-    // console.log(isEditing)
-    // function editThing(id){
-    //     toggleEdit()
-    //     // setIsEditing(isEditing === props._id ? -1 : props._id)
-    //     setEditedThings({
-    //         title: formData.title,
-    //         imgUrl: formData.imgUrl,
-    //         description: formData.description
-    //     })   
-    //}
-
-
+    const {handleDelete,  handleEditChange, editedThings, saveEdit, beginEdit} = useContext(UglyContext)
 
     function apiDelete(event){
         event.preventDefault()        
         handleDelete(props._id)
-    }
-
-    
+    }    
 
     
 if(props.isEditing){
@@ -65,10 +45,8 @@ if(props.isEditing){
                     </form> 
                 
 
-                <button className="button" onClick={apiDelete}>Delete</button>
-
-                
-                    <button className="button" onClick={() => saveEdit(props._id)}>Save</button> 
+                <button className="button" onClick={apiDelete}>Delete</button>                
+                <button className="button" onClick={() => saveEdit(props._id)}>Save</button> 
             </div>
         </>
     )}
@@ -80,26 +58,22 @@ else {
         <form>
             <h1 className="title">
             Title: {props.title}
-            </h1>
-        
+            </h1>     
 
-      
              <img className="img"
             src = {props.imgUrl}
-            />
-        
+            />        
       
              <h1 className="description">
             Description: {props.description}
             </h1>
 
-            </form> 
-        
+            </form>         
 
         <button className="button" onClick={apiDelete}>Delete</button>
-
         <button className="button" onClick = { () => beginEdit(props._id)}>Edit</button>
-    </div>)
-}
+
+    </div>
+    )}
 
 } export default Thing

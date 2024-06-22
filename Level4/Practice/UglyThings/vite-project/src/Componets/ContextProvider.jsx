@@ -1,4 +1,4 @@
-import React,{useState , useContext} from "react";
+import React,{useState } from "react";
 import axios from 'axios'
 
 const UglyContext = React.createContext()
@@ -6,8 +6,7 @@ const UglyContext = React.createContext()
 function ContextProvider(props){
     
   
-    const [uglyArray, setUglyArray] = useState([])
-    
+    const [uglyArray, setUglyArray] = useState([])    
     
     const [editedThings, setEditedThings] = useState({
         title: "",
@@ -15,18 +14,7 @@ function ContextProvider(props){
         description: "",
         isEditing: false
     })
-    const emptyThing = {
-        title: "",
-        imgUrl: "",
-        description: ""
-    }
-
-    const formData = {
-        title: "",
-        description:"",
-        imgUrl:"",
-        isEditing: false
-}
+   
     const [uglyThing, setUglyThing] = useState({
         title: "",
         description:"",
@@ -37,43 +25,39 @@ function ContextProvider(props){
 
 
     function handleChange(e){
-        const {name, value} = e.target
-        
+        const {name, value} = e.target        
         setUglyThing(prevUglyThing => ({...prevUglyThing, [name]: value}))
-
     }
 
 
-    function beginEdit(id){
-        
+    function beginEdit(id){        
         const selectedThing = uglyArray.filter(uglyThing => uglyThing._id === id)
         selectedThing[0].isEditing = !selectedThing[0].isEditing
-
         setUglyArray(prevState => prevState.map(prev => prev._id === id ? selectedThing[0] : prev))
-
         setEditedThings(selectedThing[0])
     }
+
     console.log(editedThings)
+
     function handleEditChange(e){
         const {name, value} = e.target
         setFormData(prevFormData => ({...prevFormData, [name]: value}))
     }
     
     function handleSubmit(e){
-        e.preventDefault()
-        
-
-        
+        e.preventDefault()       
         axios.post("https://api.vschool.io/dakotalail/thing", uglyThing)
         .then(res => setUglyArray(prevUglyArray => (
             [...prevUglyArray, res.data]
         )))
         .catch(err => console.log(err))
-        
-        // setUglyThing(formData)
 
     }
+
+
     console.log(uglyThing)
+
+    
     function handleDelete(_id){
          const apiUrl = `https://api.vschool.io/dakotalail/thing/${_id}`
          axios.delete(apiUrl)
@@ -113,26 +97,7 @@ function ContextProvider(props){
     }, [] )
 
 
-//     const saveEdit = async(itemId) => {try {const response = await axios.put(apiUrl, editedThings);
-        
-//         setUglyArray(prevUglyArray => prevUglyArray.map(item => item.id === itemId ? response.data : item));
-//         setEditedThings(null);   
 
-
-// } catch(error){console.error("Error saving Edit");}}
-
-    // function saveEdit(index) {
-    //     uglyArray.map(uglyThing => {
-    //         setEditedThings(-1)
-    //         axios.put("https://api.vschool.io/dakotalail/thing/" + uglyArray[index]._id, editedThings)
-    //         .then(res => setUglyArray(prevUglyArray => {
-    //             return prevUglyArray.map(uglyThing=> {
-    //                 return uglyThing._id === uglyArray[index]._id ? edit : uglyThing
-    //             })
-    //         }))
-    //         .catch(err => console.log(err))
-    //     })
-    // }
 
     return (
         <UglyContext.Provider value = {{
@@ -145,13 +110,9 @@ function ContextProvider(props){
             handleDelete,             
             editedThings, 
             setEditedThings, 
-            handleEditChange, 
-            //isEditing, 
-            //setIsEditing, 
+            handleEditChange,             
             saveEdit,
-            editThing,
-            // formData,
-            // setFormData,
+            editThing,            
             beginEdit
             
         }}>
