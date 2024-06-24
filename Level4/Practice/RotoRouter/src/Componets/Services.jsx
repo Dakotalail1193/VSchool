@@ -12,6 +12,12 @@ function Services(){
 
         <body className="services">
             <h1>This is the Services page for Roto Router</h1>
+            <h2>Services include the following</h2>
+            <ul>
+                <li>Cleaning</li>
+                <li>Installation</li>
+                <li>Remodel</li>
+            </ul>
         </body>
         </>
     )

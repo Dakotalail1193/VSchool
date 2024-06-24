@@ -13,6 +13,8 @@ function Home(){
 
         <body className="home">
             <h1>This is the Home page for Roto Router</h1>
+            <br></br>
+            <p>Please use the navigation bar up top to navigate! </p>
         </body>
         </>
     )

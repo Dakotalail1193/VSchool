@@ -6,7 +6,7 @@ export default function App() {
  
 
   return (
-
+    <>
     <nav className='nav'>
         <Link to="/Home" className="nav">
         Home
@@ -19,7 +19,9 @@ export default function App() {
         </Link>
       </nav>
 
-    
+      
+
+      </>
   )
 }
 

@@ -12,6 +12,7 @@ function About(){
 
         <body className="about">
             <h1>This is the About page for Roto Router</h1>
+            <p>Roto Router has been in business for over 20 years and the number one choice for plumbing needs!</p>
         </body>
         </>
     )

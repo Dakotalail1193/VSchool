@@ -24,10 +24,29 @@ button{
 h1{
     text-align: center;
     position: relative;
-    top:100px;
-    
+    top:100px;    
 }
 
+p{
+    text-align: center;
+    position: relative;
+    top:150px;
+ }
+
+ h2{
+    text-align: center;
+    position: relative;
+    top:150px;
+ }
+
+ ul{
+    text-align: center;
+    position: relative;
+    top:175px;
+    list-style: none;
+ }
+
+ 
 * .home{
     background-color: cadetblue;
     height: 860px;
