@@ -12,7 +12,9 @@ function Form(){
 
     return(
         <>
+        
         <form className='form-container'>
+        
             <input className='form-input'
                     type="text"
                     placeholder='Title'
@@ -45,6 +47,7 @@ function Form(){
                         type="submit">Submit
                 </button>
         </form>
+        <h1>Ugly List</h1>
         </>
     )
 }
