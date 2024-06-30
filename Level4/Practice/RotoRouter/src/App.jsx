@@ -26,3 +26,32 @@ export default function App() {
 }
 
  
+
+
+
+
+{/* <div className='main'>   
+    
+      
+
+    <div>
+
+      <div className='selection'>
+        <Link to="/Horde" className="nav">
+            <button className='horde-button'>
+              <img src="/src/Assets/Horde_Crest.png" className='crest'/>
+            </button>
+            <p>Horde</p>  
+        </Link>  
+        <img src="/src/Assets/main-background.png"/>        
+        <Link to="/Alliance" className="nav">
+            <button className='alliance-button'>
+              <img src="/src/Assets/Alliance_Crest.png" className='crest'/>                
+            </button> 
+            <p>Alliance</p> 
+        </Link>
+      </div>
+
+    </div> 
+
+  </div> */}
