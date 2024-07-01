@@ -17,7 +17,7 @@ function Horde(){
                 <div className="horde-races">                    
                     {hordeRace}
                 </div>
-                <button onClick={()=> navigate("/")} className="return">Return to Main Page</button>
+                <button onClick={()=> navigate("/")} className="horde-return">Return to Main Page</button>
                 
             </div>
         

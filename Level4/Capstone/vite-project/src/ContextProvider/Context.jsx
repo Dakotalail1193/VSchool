@@ -36,7 +36,7 @@ function ContextProvider(props){
             <>
             <div className='race-container'>
                 <h1 className='race-name'>{race.name} </h1>
-                <h2 onClick={()=> navigate(`/${race.name}`)} className='alliance-race-link'>Alliance</h2>
+                <h2 onClick={()=> navigate(`/${race.name}`)} className='alliance-race-link'>Learn More</h2>
             </div>
             </>
            )

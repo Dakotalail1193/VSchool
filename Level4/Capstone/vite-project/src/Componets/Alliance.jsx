@@ -17,7 +17,7 @@ function Alliance(){
             <div className="alliance-races">
                 {allianceRace}
             </div>
-            <button onClick={()=> navigate("/")}className="return">Return to Main Page</button>
+            <button onClick={()=> navigate("/")}className="alliance-return">Return to Main Page</button>
             
 
         </div>
