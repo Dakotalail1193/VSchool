@@ -9,6 +9,7 @@ function Tauren(){
         <>
         <div className="tauren">
             <div className="vl"/>
+            <div className="hl"/>
             <div className="bio">
                 <h1>
                     Always the Tauren strive to preserve the balance of nature and heed the willd of their Goddess, the Earth Mother.

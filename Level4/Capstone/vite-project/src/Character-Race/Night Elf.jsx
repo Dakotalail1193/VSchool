@@ -9,6 +9,7 @@ function NightElf(){
         <>
         <div className="nelf">
         <div className="vl"></div>
+        <div className="hl"/>
             <div className="bio">
                 <h1>
                     Ten thousand years ago, the Night Elves founded a fast empire, but their reckless use of primal magic brought them to ruin.

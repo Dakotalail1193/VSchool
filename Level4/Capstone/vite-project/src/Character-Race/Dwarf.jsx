@@ -9,6 +9,7 @@ function Dwarf(){
         <>
         <div className="dwarf">
             <div className="vl"></div>
+            <div className="hl"/>
             <div className="bio">
                 <h1>
                     In ages past the dwarves cared only for riches taken from the earth's depths. Then records surfaced of a god-like race said to have given the dwarves life...and an enchanted birthright. 

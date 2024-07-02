@@ -13,8 +13,8 @@ function Home() {
               <p className="horde-select">Horde</p>  
           </Link>
           <Link to="/">
-            <button className='main-button'>
-          <img src="/src/Assets/main-background.png"/>
+            <button >
+          <img className='main-button' src="/src/Assets/main-background.png"/>
           </button>
           </Link>        
           <Link to="/Alliance" className="nav">

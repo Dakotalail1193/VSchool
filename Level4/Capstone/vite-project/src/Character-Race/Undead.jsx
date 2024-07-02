@@ -9,6 +9,7 @@ function Undead(){
         <>
         <div className="undead">
         <div className="vl"/>
+        <div className="hl"/>
             <div className="bio">
                 <h1>
                     Free of the Lich King's grasp, the Forsaken seek to overthrow his rule. Led by Lady Sylvanas, they hunger for vengeance against the Scourge.

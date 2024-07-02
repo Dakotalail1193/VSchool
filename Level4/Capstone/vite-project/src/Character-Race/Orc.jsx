@@ -9,6 +9,7 @@ function Orc(){
         <>
         <div className="orc">
             <div className="vl"/>
+            <div className="hl"/>
             <div className="bio">
                 <h1>
                     The Orc race originated on the planet Draenor. A peaceful people wit shamanic beliefs, they were enslaved bythe Burning Legion and forced into war with the humans of Azeroth.

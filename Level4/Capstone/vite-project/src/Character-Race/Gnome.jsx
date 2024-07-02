@@ -9,6 +9,7 @@ function Gnome(){
         <>
         <div className="gnome">
         <div className="vl"></div>
+        <div className="hl"/>
             <div className="bio">
                 <h1>
                     Though small in stature, the gnomes of Khaz Modan have used their great intellect to secure a place in history.
