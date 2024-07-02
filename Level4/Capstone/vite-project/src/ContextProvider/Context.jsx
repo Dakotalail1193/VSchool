@@ -47,7 +47,7 @@ function ContextProvider(props){
    
     
        async function getData(){
-        axios.get(`https://us.api.blizzard.com/data/wow/playable-race/index?namespace=static-classic-us&locale=en_US&access_token=USGFspIUR4Z8ZcSJZH9b5knodZTxsJ6URt`)
+        axios.get(`https://us.api.blizzard.com/data/wow/playable-race/index?namespace=static-classic-us&locale=en_US&access_token=USz1wiiJQJ2unddtIgiDRxQ6AksmpqFQe3`)
             .then(res => res.data)
             .then(data=> setRaceList(data.races) )            
         }  

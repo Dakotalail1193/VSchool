@@ -2,6 +2,7 @@
     margin:0;
     font-family: 'Friz-Quadrata'; 
     font-weight: 100; 
+    color:white;
   }
 
   @font-face {
@@ -204,7 +205,6 @@
   }
 
   .horde-return{
-    color: white;
     border-top: 1px solid #8b8f91;
     background: #ff2424;
     background: -webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#ff2424));
@@ -213,8 +213,15 @@
     background: -ms-linear-gradient(top, #9c3e3e, #ff2424);
     background: -o-linear-gradient(top, #9c3e3e, #ff2424);
     padding: 4px 10px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
     border-radius: 9px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: #ffe642;
+    font-size: 15px;
     vertical-align: middle;
     text-align: center;
     margin-left: 46.5%;
@@ -323,8 +330,6 @@
     text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: #fff308;
     font-size: 15px;
-    font-family: Helvetica, Arial, Sans-Serif;
-    text-decoration: none;
     vertical-align: middle;
     text-align: center;
     margin-left: 46.75%;
@@ -336,6 +341,139 @@
     border-top-color: #3b19fc;
     background: #3b19fc;
     color: #fee542;
+  }
+
+ /* Race styling */
+
+  .vl{
+    border-left: 5px ridge grey;
+    height: 910px;
+    position: absolute;
+    left: 65%;
+    margin-left: -3px;
+    top: 0;
+    bottom:0;
+  }
+
+  .bio{
+    position: absolute;
+    right:50px;
+    top:10%;
+    width: 500px;
+    text-align: center;
+    border:4px, ridge, grey;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(34, 32, 32, 0.9); 
+    margin-left: 10px;
+    
+  }
+
+  .class-list{
+    position:  absolute;
+    right: 260px;
+    text-align: center;
+    top:80%;
+    border:4px, ridge, grey;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(34, 32, 32, 0.9); 
+  }
+
+   /* Dwarf Styling */
+
+   .dwarf{
+    background-image: url('Assets/Dwarf_background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;   
+  }
+
+  /* Human style */
+
+  .human{
+    background-image: url('Assets/Human-background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+    
+  }
+
+  /*Gnome styling  */
+
+  .gnome{
+    background-image: url('Assets/Gnome_background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+  }
+
+  /* Night Elf Styling */
+
+  .nelf{
+    background-image: url('Assets/Nightelf-background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+  }
+
+  /* Orc Styling */
+
+  .orc{
+    background-image: url('Assets/Orc-background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+  }
+
+  /* Tauren Styling */
+
+  .tauren{
+    background-image: url('Assets/Tauren_background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+  }
+
+  /* Troll Styling */
+
+  .troll{
+    background-image: url(Assets/Troll-background.png);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
+  }
+
+  /* Undead Styling */
+
+  .undead{
+    background-image: url('Assets/Undead_background.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+    height: 910px;
+    width: 100%;
   }
 
   
