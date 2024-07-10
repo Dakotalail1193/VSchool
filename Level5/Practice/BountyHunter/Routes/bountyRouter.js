@@ -47,7 +47,7 @@ bountyRouter.post("/", (req,res)=>{
     const newBounty = req.body
     newBounty._id = uuidv4()
     bounties.push(newBounty)
-    res.send(`Succesfully added ${newBounty.firstName} ${newBounty.lastName} to the list`)
+    res.send(newBounty)
 })
 
 bountyRouter.delete("/:bountyId", (req, res) => {
@@ -59,8 +59,9 @@ bountyRouter.delete("/:bountyId", (req, res) => {
 
 bountyRouter.put("/:bountyId", (req, res) => {
   const bountyId = req.params.bountyId
+  const updateObject = req.body
   const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-  const updatedBounty = Object.assign(bounties[bountyIndex], req.body)
+  const updatedBounty = Object.assign(bounties[bountyIndex], updateObject)
   res.send(updatedBounty)
 })
 
