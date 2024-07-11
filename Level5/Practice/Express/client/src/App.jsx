@@ -9,7 +9,7 @@ function App(){
     function getMovies(){
         axios.get("/movies")
         .then(res => setMovies(res.data))
-        .catch(err => console.log(err))    
+        .catch(err => console.log(err.response.data.errMsg))    
     }
 
     function addMovie(newMovie){
