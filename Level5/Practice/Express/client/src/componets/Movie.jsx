@@ -3,7 +3,7 @@ import AddMovieForm from './AddmovieForm'
 
 
 function Movie(props){
-    const {title,genre, _id} = props
+    const {title, description, genre, _id} = props
     const [editToggle, setEditToggle] = useState(false)
     return (
         <>
@@ -11,6 +11,7 @@ function Movie(props){
             { !editToggle ?
             <>
                 <h1>Title: {title}</h1>
+                <h2>Description: {description}</h2>
                 <p>Genre: {genre}</p>
                 <button 
                 className='delete-btn' 
@@ -29,10 +30,13 @@ function Movie(props){
             <>
                 <AddMovieForm 
                 title={title}
+                description={description}
                 genre={genre}
                 _id={_id}
                 btnText="Submit Edit"
                 submit={props.editMovie}
+                
+                
                 />
                                 
                 <button

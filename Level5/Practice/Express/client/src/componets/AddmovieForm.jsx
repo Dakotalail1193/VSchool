@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function AddMovieForm(props){
-    const initInputs = { title: props.title || "", genre: props.genre || ""}
+    const initInputs = { title: props.title || "", description: props.description || "", genre: props.genre || ""}
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e){
@@ -24,6 +24,13 @@ function AddMovieForm(props){
                 value={inputs.title} 
                 onChange={handleChange} 
                 placeholder='Title'
+                />
+                <input 
+                type='text' 
+                name='description' 
+                value={inputs.description} 
+                onChange={handleChange} 
+                placeholder='Description'
                 />
 
                 <input 

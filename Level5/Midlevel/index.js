@@ -23,18 +23,26 @@ console.log(uniqueChars);
 
 
 function sortByProperty(objects, propertyName) {
-  if(typeof objects[0].propertyName === "string"){ //looks for number or string
-    return objects.sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
+//   if(typeof objects[0].propertyName === "string"){ //looks for number or string
+//     return objects.sort((a, b) =>
+//       a.name.localeCompare(b.name)
+//     );
 
-} else(typeof objects[0].propertyName === 'number')
-    return objects.sort((a, b) => a[propertyName] - b[propertyName])
-
+// } else(typeof objects[0].propertyName === 'number')
+//     return objects.sort((a, b) => a[propertyName] - b[propertyName])
+return objects.slice().sort((a,b) => {
+  if(a[propertyName] < b[propertyName]) {
+    return -1
+  }
+  if (a[propertyName] > b[propertyName]){
+    return 1
+  } 
+  return 0
+})
 }
 
 const people = [
-  { name: 'Alice', age: 30 },
+  { name: 'Frank', age: 30 },
   { name: 'Bob', age: 25 },
   { name: 'Charlie', age: 35 },
   { name: 'David', age: 28 },
