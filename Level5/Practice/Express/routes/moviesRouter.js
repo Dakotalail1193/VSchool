@@ -3,20 +3,12 @@ const movieRouter = express.Router()
 const {v4: uuidv4} = require('uuid')
 const Movie = require('../models/movie')
 
-const movies = [
-    {title:"Die Hard", genre:"Action", _id: uuidv4()},
-    {title:"Lion King", genre:"Fantasy", _id: uuidv4()},
-    {title:"Godzilla (1954)", genre:"Action", _id: uuidv4()},
-    {title: "Friday the 13th", genre:"Horror", _id: uuidv4()},
-    {title:"Hot Fuzz", genre:"Action", _id: uuidv4()}
-]
-
 
 
 movieRouter.get("/", async(req, res, next)=>{
     try {
-        const foundmovies = await Movie.find()
-        return res.status(200).send(foundmovies)
+        const foundMovies = await Movie.find()
+        return res.status(200).send(foundMovies)
     } catch (err) {
         res.status(500)
         return next(err)
