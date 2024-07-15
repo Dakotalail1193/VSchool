@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
+
 function AddBountyForm(props){
     const initInputs = { firstName: props.firstName || "",
                          lastName: props.lastName || "",
-                         living: props.living || "",
+                         isLiving: props.isLiving || "",
                          bountyAmount: props.bountyAmount || "",
                          type: props.type || "",
      }
@@ -25,9 +26,9 @@ function AddBountyForm(props){
         <form onSubmit={handleSubmit}>
         <input type = "text" name="firstName" value={inputs.firstName} onChange={handleChange} placeholder='First Name'/>
         <input type = "text" name="lastName" value={inputs.lastName} onChange={handleChange} placeholder='Last Name'/>
-        <input type = "text" name="living" value={inputs.living} onChange={handleChange} placeholder='Bounty Living?'/>
+        <input type = "text" name="isLiving" value={inputs.isLiving} onChange={handleChange} placeholder='Bounty Living?'/>
         <input type = "text" name="type" value={inputs.type} onChange={handleChange} placeholder='Sith or Jedi?'/>
-        <input type = "text" name="bountyAmount" value={inputs.bountyAmount} onChange={handleChange} placeholder='Reward'/>
+        <input type = "number" name="bountyAmount" value={inputs.bountyAmount} onChange={handleChange} placeholder='Reward'/>
         <button>{props.btnText}</button>
         </form>
         

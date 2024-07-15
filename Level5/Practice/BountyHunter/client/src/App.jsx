@@ -44,13 +44,8 @@ function App(){
             submit={addBounty}
             btnText="Add Bounty"
             />
-            {bounty.map(bounty => 
-            <Bounty 
-            {...bounty}
-            key = {bounty.firstName + bounty.lastName}
-            deleteBounty={deleteBounty}
-            editBounty={editBounty}
-            />
+
+            {bounty.map(bounty => <Bounty {...bounty} key = {bounty.firstName} deleteBounty={deleteBounty} editBounty={editBounty}/>
         )}
         </div>
         

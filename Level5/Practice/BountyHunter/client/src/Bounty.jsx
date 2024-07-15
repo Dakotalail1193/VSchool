@@ -3,7 +3,7 @@ import AddBountyForm from './AddBountyForm'
 
 
 function Bounty(props) {
-    const {firstName, lastName, living, bountyAmount, type, _id} = props
+    const {firstName, lastName, isLiving, bountyAmount, type, _id} = props
     const [editToggle, setEditToggle] = useState(false)
 
     return(
@@ -12,19 +12,11 @@ function Bounty(props) {
         { !editToggle ?
         <>
             <h1>Name: {firstName} {lastName}</h1>
-            <h1>Living: {living ? "True" : "False"}</h1>
-            <h1>Reward: {bountyAmount}</h1>
-            <h1>Sith or Jedi?: {type}</h1>
-            <button 
-            className='delete-btn'
-            onClick={() => props.deleteBounty(_id)}
-            >Delete
-            </button>
-
-            <button 
-            className='edit-btn'
-            onClick={() => setEditToggle(prevToggle => !prevToggle)}
-            >Edit</button>
+            <h1>Alive or Dead? : {isLiving ? "True" : "False"}</h1>
+            <h1>Reward : {bountyAmount} Credits</h1>
+            <h1>Sith or Jedi? : {type}</h1>
+            <button className='delete-btn' onClick={() => props.deleteBounty(_id)}>Delete</button>
+            <button className='edit-btn' onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
         </>
 
         :
@@ -33,8 +25,8 @@ function Bounty(props) {
         <AddBountyForm
         firstName={firstName}
         lastName={lastName}
-        living={living}
-        reward={bountyAmount}
+        isLiving={isLiving}
+        bountyAmount={bountyAmount}
         type={type}
         _id={_id}
         btnText="Submit Edit"
