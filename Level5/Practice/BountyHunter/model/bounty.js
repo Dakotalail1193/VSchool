@@ -16,12 +16,12 @@ const bountySchema = new Schema({
     },
     bountyAmount:{
         type:Number,
-        required:true,
+        required: true,
     },
     type:{
         type:String,
         required:true,
-        unique: true
+        
     }
 })
 

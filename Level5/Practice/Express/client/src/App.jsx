@@ -14,15 +14,14 @@ function App(){
 
     function addMovie(newMovie){
         axios.post("/movies", newMovie)
-        .then(res => {
-            setMovies(prevMovies => [...prevMovies, res.data])})
+        .then(res => {setMovies(prevMovies => [...prevMovies, res.data])})
         .catch(err => console.log(err))
     }
 
     function deleteMovie(movieId){
         axios.delete(`/movies/${movieId}`)
-        .then(res => {
-            setMovies(prevMovies => prevMovies.filter (movie => movie._id !== movieId))
+        .then(res => {setMovies(prevMovies => prevMovies.filter 
+            (movie => movie._id !== movieId))
         })
         .catch(err => console.log(err))
     }

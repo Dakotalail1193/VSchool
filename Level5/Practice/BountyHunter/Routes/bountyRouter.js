@@ -3,36 +3,7 @@ const bountyRouter = express.Router()
 const {v4: uuidv4} = require('uuid')
 const Bounty = require ('../model/bounty')
 
-const bounties = [
-    { firstName:"Gluk",
-      lastName:"Pitto",
-      living: true,
-      bountyAmount: 1000,
-      type:"Sith",
-      _id:uuidv4()         
-    },
-    { firstName:"Lad",
-        lastName:"Agows",
-        living: true,
-        bountyAmount: 2500,
-        type:"Jedi",
-        _id:uuidv4()            
-      },
-      { firstName:"Rysi",
-        lastName:"Celwik",
-        living: true,
-        bountyAmount: 4800,
-        type:"Jedi",
-        _id:uuidv4()            
-      },
-      { firstName:"Darro",
-        lastName:"Tanau",
-        living: true,
-        bountyAmount: 2000,
-        type:"Sith",
-        _id:uuidv4()            
-      }
-]
+
 
 bountyRouter.get("/", async (req, res, next ) => {
     try {
