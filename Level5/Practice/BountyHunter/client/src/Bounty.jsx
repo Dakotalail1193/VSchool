@@ -11,10 +11,10 @@ function Bounty(props) {
         <div className='bounty'>
         { !editToggle ?
         <>
-            <h1>Name: {firstName} {lastName}</h1>
-            <h1>Alive or Dead? : {isLiving ? "True" : "False"}</h1>
-            <h1>Reward : {bountyAmount} Credits</h1>
-            <h1>Sith or Jedi? : {type}</h1>
+            <h2>Name: {firstName} {lastName}</h2>
+            <h2>Alive or Dead? : {isLiving ? "True" : "False"}</h2>
+            <h2>Reward : {bountyAmount} Credits</h2>
+            <h2>Sith or Jedi? : {type}</h2>
             <button className='delete-btn' 
             onClick={() => props.deleteBounty(_id)}>
             Delete

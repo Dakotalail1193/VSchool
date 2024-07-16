@@ -37,7 +37,7 @@ function App(){
     }, [])
 
     return(
-        <>
+        <><div className="header"><h1>Active Bounty Tracker</h1></div>
         <div className="bounty-container">
             <AddBountyForm 
             submit={addBounty}
