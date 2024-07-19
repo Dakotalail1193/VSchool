@@ -18,7 +18,7 @@ async function connectToDb(){
 
 connectToDb()
 
-app.use('/inventory', require('./routes/inventory.js'))
+app.use("/inventory", require("./routes/inventoryRouter.js"))
 
 app.use((err, req, res, next) => {
     console.log(err)
