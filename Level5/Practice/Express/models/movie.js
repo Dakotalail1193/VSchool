@@ -13,6 +13,11 @@ const movieSchema = new Schema({
     },
     genre:{
         type: String
+    },
+
+    author : {
+        type: Schema.Types.ObjectId,
+        ref : "Director"
     }
 })
 

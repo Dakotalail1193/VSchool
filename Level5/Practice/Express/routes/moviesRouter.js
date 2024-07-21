@@ -15,21 +15,21 @@ movieRouter.get("/", async(req, res, next)=>{
     }  
     })
 
-// movieRouter.get("/:movieId", (req,res, next) => {
-//   const movieId = req.params.movieId
-//   const foundMovie = movies.find( movie => movie._id === movieId)
-//   if(!foundMovie){
-//     const error = new Error(`The item with id ${movieId} was not found`)
-//     res.status(500)
-//     return next(error)
-//   }
-//   res.status(200).send(foundMovie)
-// })
-
 
 movieRouter.get("/genre", async (req, res, next) =>{
     try {
         const foundMovies = await Movie.find({genre: req.query.genre})
+        return res.status(200).send(foundMovies)
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+ })
+
+
+ movieRouter.get("/moviesByDirector/:directorId", async (req, res, next) => {
+    try {
+        const foundMovies = await Movie.find({author: req.params.directorId})
         return res.status(200).send(foundMovies)
     } catch (error) {
         res.status(500)
@@ -49,6 +49,22 @@ movieRouter.post("/", async(req, res, next) => {
         return next(error)
     }
 })
+
+
+movieRouter.post("/moviesWithDirector/:directorId", async (req, res, next) => {
+    try {
+        req.body.author = req.params.directorId
+        const  newMovie = new Movie(req.body)
+        const savedMovie = await newMovie.save()
+        return res.status(201).send(savedMovie)       
+    } catch (error) {
+        res.status(500)
+        return next (error)
+    }
+ })
+
+
+
 
 movieRouter.delete("/:movieId", async (req, res, next) => {
     try {

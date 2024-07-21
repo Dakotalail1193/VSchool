@@ -22,6 +22,7 @@ connectToDb()
 
 app.use("/movies", require("./routes/moviesRouter.js"))
 app.use("/tvShows", require("./routes/tvShowsRouter.js"))
+app.use("/directors", require ("./routes/directorRouter.js"))
 
 
 
