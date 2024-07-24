@@ -18,7 +18,8 @@ async function connectToDb(){
 
 connectToDb()
 
-app.use("/", require("./routes/budgetRouter"))
+app.use("/withdrawal", require("./routes/withdrawalRouter"))
+app.use("/deposit", require("./routes/depositRouter"))
 
 app.use((err, req, res, next) => {
     console.log(err)
