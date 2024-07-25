@@ -8,11 +8,11 @@ function Deposit(props){
     return(
         <>
         <div className='deposit'>
-            <h1>Title: {title}</h1>
-            <h1>Description:{description}</h1>
-            <h1>Deposit Amount: {deposit} </h1>
+            <h2>Title: {title}</h2>
+            <h2>Description:{description}</h2>
+            <h2>Deposit Amount: {deposit} </h2>
             <button className='delete-btn'
-            onClick={deleteDeposit}>Delete</button>
+            onClick={() => {deleteDeposit(props._id)}}>Delete</button>
         </div>
         </>
     )

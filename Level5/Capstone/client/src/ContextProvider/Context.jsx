@@ -11,6 +11,7 @@ function ContextProvider(props){
     function getDeposit(){
         axios.get("/deposit")
         .then(res => setDeposit(res.data))
+        
         .catch(err => console.log(err))
     }
 
@@ -45,7 +46,12 @@ function ContextProvider(props){
     }
 
     
-
+    function withdrawalTotal(){
+        axios.get('/withdrawal')
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
+    }
+    
     
     
    
@@ -62,7 +68,8 @@ function ContextProvider(props){
             deposit,
             setDeposit,
             withdrawal,
-            setWithdrawal
+            setWithdrawal,
+            withdrawalTotal
         }}>
             {props.children}
         </Context.Provider>

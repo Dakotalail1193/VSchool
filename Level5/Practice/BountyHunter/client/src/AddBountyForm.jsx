@@ -6,9 +6,9 @@ function AddBountyForm(props){
                          lastName: props.lastName || "",
                          isLiving: props.isLiving || "",
                          bountyAmount: props.bountyAmount || "",
-                         type: props.type || "",
+                         type: props.type || ""
      }
-     const [inputs, setInputs] =useState(initInputs)
+     const [inputs, setInputs] = useState(initInputs)
 
      function handleChange(e){
         const { name, value} = e.target 

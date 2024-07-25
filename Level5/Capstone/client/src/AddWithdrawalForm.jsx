@@ -22,9 +22,9 @@ const initInputs = { title: props.title || "",
     return(
         <>
         <form onSubmit={handleSubmit}>
-            <input type = "text" value = {inputs.title} onChange={handleChange} placeholder="Title"/>
-            <input type = "text" value = {inputs.description} onChange={handleChange} placeholder="Description"/>
-            <input type = "number" value = {inputs.withdrawal} onChange={handleChange} placeholder="0"/>
+            <input type = "text" name = "title" value = {inputs.title} onChange={handleChange} placeholder="Title"/>
+            <input type = "text" name = "description" value = {inputs.description} onChange={handleChange} placeholder="Description"/>
+            <input type = "number" name = "withdrawal" value = {inputs.withdrawal} onChange={handleChange} placeholder="0"/>
             <button>{props.btnText}</button>
         </form>
         </>

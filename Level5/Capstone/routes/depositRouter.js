@@ -23,4 +23,15 @@ depositRouter.post("/", async(req, res, next) => {
     }
 })
 
+depositRouter.delete("/:depositId" , async (req, res, next) => {
+    try {
+        const depositId = req.params.depositId
+        const deletedDeposit = await Deposit.findByIdAndDelete(depositId)
+        return res.status(200).send(`Succesfully deleted ${deletedDeposit.title}`)  
+    } catch (err) {
+        res.status(500)
+        return next(err)
+    }
+})
+
 module.exports = depositRouter
