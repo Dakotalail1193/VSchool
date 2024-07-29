@@ -37,5 +37,20 @@ withdrawalRouter.delete("/:withdrawalId" , async (req, res, next) => {
     }
 })
 
+withdrawalRouter.put("/:withdrawalId", async(req, res, next) => {
+    try {
+     const withdrawalId = req.params.withdrawalId
+     const updatedWithdrawal = await Withdrawal.findByIdAndUpdate(
+       withdrawalId,
+       req.body,
+       {new:true}
+     )
+     return res.status(200).send(updatedWithdrawal)
+    } catch (err) {
+     res.status(500)
+     return next(err)
+    }     
+   })
+
 
 module.exports = withdrawalRouter

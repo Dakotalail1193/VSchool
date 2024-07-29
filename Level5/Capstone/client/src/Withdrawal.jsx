@@ -1,23 +1,46 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { Context } from './ContextProvider/Context'
+import AddWithdrawalForm from './AddWithdrawalForm'
 
 function Withdrawal(props){
-    const {title, description, withdrawal} = props
-    const {deleteWithdrawal} = useContext(Context)
+    const {title, description, withdrawal, _id} = props
+    const {deleteWithdrawal, editWithdrawal} = useContext(Context)
+    const [editToggle, setEditToggle] = useState(false)
 
     // function handleDelete(e){
     //     e.preventDefault()
     //     deleteWithdrawal(props._id)
     // }
-
+    
+    console.log(withdrawal)
     return(
         <>
         <div className='withdrawal'>
+            {!editToggle ?
+            <>
             <h2>Title: {title}</h2>
             <h2>Description:{description}</h2>
-            <h2>Withdrawal Amount: {withdrawal} </h2>
+            <h2>Withdrawal Amount: ${withdrawal} </h2>
             <button className='delete-btn'
             onClick={() => {deleteWithdrawal(props._id)}}>Delete</button>
+            <button className='edit-btn'
+            onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
+            </>
+            :
+            <>
+            <AddWithdrawalForm
+            title={title}
+            description={description}
+            withdrawal={withdrawal}
+            _id={_id}
+            btnText="Submit Edit"
+            submit={editWithdrawal}/>
+            <button 
+            className='edit-btn'
+            onClick={() => setEditToggle(prevToggle => !prevToggle)}
+            >Close</button>            
+            </>
+        }
         </div>
         </>
     )

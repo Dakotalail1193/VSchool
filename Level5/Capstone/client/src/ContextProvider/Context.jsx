@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 const Context = React.createContext()
 
@@ -6,6 +6,7 @@ const Context = React.createContext()
 function ContextProvider(props){
     const [deposit, setDeposit] = useState([])
     const [withdrawal, setWithdrawal] = useState([])
+
      
 
     function getDeposit(){
@@ -45,16 +46,45 @@ function ContextProvider(props){
         .catch(err => console.log(err))
     }
 
-    
-    function withdrawalTotal(){
-        axios.get('/withdrawal')
-        .then(res => console.log(res.data))
+    function editDeposit(updates, depositId){
+        axios.put(`/deposit/${depositId}`, updates)
+        .then(res => {
+            setDeposit(prevDeposit => prevDeposit.map (deposit => deposit._id !== depositId ? deposit : res.data))
+        })
         .catch(err => console.log(err))
     }
+
+    function editWithdrawal(updates, withdrawalId){
+        axios.put(`/withdrawal/${withdrawalId}`, updates)
+        .then(res => {
+            setWithdrawal(prevWithdrawal => prevWithdrawal.map (withdrawal => withdrawal._id !== withdrawalId ? withdrawal : res.data))
+        })
+        .catch(err => console.log(err))
+    }
+
     
+    useEffect(  () => {
+        getWithdrawal()
+        withdrawalTotal()
+    }, [])
+
+    async function withdrawalTotal(){
+        try {
+            let total
+            const sum = await Promise.all(withdrawal.map( item => item.withdrawal += total))
+            console.log(withdrawal)
+            return sum
+        } catch (error) {
+            console.log(error)
+        }
+        
+        // withdrawal.map( item => console.log("test"))
+        
+        }
     
-    
-   
+    // pull in withdrawal context
+    // do a map or for loop 
+    // for withdrawal object, sum the withdrawal numbers
 
     return (
         <>
@@ -69,6 +99,8 @@ function ContextProvider(props){
             setDeposit,
             withdrawal,
             setWithdrawal,
+            editDeposit,
+            editWithdrawal,
             withdrawalTotal
         }}>
             {props.children}

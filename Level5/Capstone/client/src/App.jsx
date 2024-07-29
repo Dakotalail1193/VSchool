@@ -14,6 +14,21 @@ function App(){
         getWithdrawal()
         withdrawalTotal()       
     }, [])
+
+    const totalWithdrawal = withdrawal.reduce((total, num) =>{
+        total += num.withdrawal
+        return total
+    },0)
+    console.log(totalWithdrawal)
+
+    const totalDeposit = deposit.reduce((total, num) => {
+        total += num.deposit
+        return total
+    }, 0)
+
+    const final = totalDeposit - totalWithdrawal
+    console.log(final)
+    
     
     return(
         <>
@@ -31,6 +46,7 @@ function App(){
             <Deposit {...deposit} 
             key= {deposit.title} 
             deleteDeposit={deleteDeposit}/>)}
+            <h1>Total: ${totalDeposit}</h1>
         </div >
 
 
@@ -43,8 +59,11 @@ function App(){
             <Withdrawal {...withdrawal} 
             key= {withdrawal.title} 
             deleteWithdrawal={deleteWithdrawal}/>)}
+            <h1>Total: ${totalWithdrawal}</h1>
         </div >
     </div>
+
+    <div className='final'><h1>Monthly Remainder:${final}</h1></div>
 
         </>
     )

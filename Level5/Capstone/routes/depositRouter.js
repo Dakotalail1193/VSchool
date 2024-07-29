@@ -34,4 +34,19 @@ depositRouter.delete("/:depositId" , async (req, res, next) => {
     }
 })
 
+depositRouter.put("/:depositId", async(req, res, next) => {
+    try {
+     const depositId = req.params.depositId
+     const updatedDeposit = await Deposit.findByIdAndUpdate(
+       depositId,
+       req.body,
+       {new:true}
+     )
+     return res.status(200).send(updatedDeposit)
+    } catch (err) {
+     res.status(500)
+     return next(err)
+    }     
+   })
+
 module.exports = depositRouter
