@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Auth from './Auth';
+
 
 function Form(props) {
 
@@ -10,7 +10,7 @@ function Form(props) {
 
     const [formData, setFormData] = useState(initState)
 
-    const { isMember, submit, login, signup } = props
+    const { isMember, submit} = props
 
     function handleChange(e){
         const {name, value} = e.target

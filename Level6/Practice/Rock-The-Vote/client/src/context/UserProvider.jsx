@@ -1,23 +1,22 @@
 import React, {useState} from "react"
 import axios from "axios"
-import { request } from "express"
 
 export const UserContext = React.createContext()
 
-// const userAxios = axios.create()
+const userAxios = axios.create()
 
-// userAxios.interceptors.request.use(config => {
-//     const token = localStorage.getItem('token')
-//     config.headers.Authorization = `Bearer ${token}`
-//     return config
-// })
+userAxios.interceptors.request.use(config => {
+    const token = localStorage.getItem('token')
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
 
 function UserProvider(props){
 
     const initState = {
         user : JSON.parse(localStorage.getItem("user")) ||{},
         token : localStorage.getItem("token") || "",
-        issues : []
+        issues :  []
     }
 
     const [userState, setUserState] = useState(initState)
@@ -76,18 +75,22 @@ function UserProvider(props){
         }
     }
 
-    // async function getUserIssues(){
-    //     try {
-    //         const res = await userAxios.get('/api/main/issues/user')
-    //         console.log(res.data)
-    //     } catch (error) {
-    //         console.log(error)
-            
-    //     }
-    // }
+    async function getUserIssues(){
+        try {
+            const res = await userAxios.get('/api/main/issues/user')
+           setUserState(prevState => {
+            return {
+                ...prevState,
+                issues: res.data
+            }
+           })
+        } catch (error) {
+            console.log(error)  
+        }
+    }
 
     return(
-        <UserContext.Provider value ={{...userState, signup, login, logout, getUserIssues}}>
+        <UserContext.Provider value ={{...userState, signup, login, logout,getUserIssues}}>
             {props.children}
         </UserContext.Provider>
     )
