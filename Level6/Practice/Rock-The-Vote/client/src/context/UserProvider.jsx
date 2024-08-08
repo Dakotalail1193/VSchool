@@ -20,6 +20,7 @@ function UserProvider(props){
     }
 
     const [userState, setUserState] = useState(initState)
+    const [allIssues, setAllIssues] = useState([])
 
     async function signup(creds){
         try {
@@ -89,8 +90,42 @@ function UserProvider(props){
         }
     }
 
+    async function addIssue(newIssue){
+        try {
+            const res = await userAxios.post('/api/main/issues', newIssue)
+            setUserState(prevState => {
+                return{
+                    ...prevState,
+                    issues: [...prevState.issues, res.data]
+                }
+            })
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
+    async function getAllIssues(){
+        try {
+            const res = await userAxios.get('/api/main/issues')            
+                setAllIssues(res.data)            
+        } catch (error) {
+            console.log(error)
+            
+        }
+    }
+
     return(
-        <UserContext.Provider value ={{...userState, signup, login, logout,getUserIssues}}>
+        <UserContext.Provider value ={{
+            ...userState, 
+            signup, 
+            login, 
+            logout,
+            getUserIssues,
+            addIssue,
+            allIssues,
+            getAllIssues
+            }}>
             {props.children}
         </UserContext.Provider>
     )
