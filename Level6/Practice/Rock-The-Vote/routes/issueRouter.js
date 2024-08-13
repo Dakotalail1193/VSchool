@@ -4,6 +4,7 @@ const issuesRouter = express.Router()
 
 issuesRouter.post('/', async (req, res, next) => {
     try {
+        req.body.username = req.auth.username
         req.body.userId = req.auth._id
         const newIssue = new Issue(req.body)
         const savedIssue = await newIssue.save()
@@ -53,6 +54,42 @@ issuesRouter.put('/:issueId', async(req, res, next) => {
         {new:true}
        )
        return res.status(200).send(updatedId)
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+})
+
+issuesRouter.put('/upvotes/:issueId', async (req, res, next) => {
+    try {
+        const updatedIssue = await Issue.findByIdAndUpdate(
+            req.params.issueId,
+            {
+                $addToSet: {upvotes: req.auth._id},
+                $pull: {downvotes: req.auth._id}
+            },
+            {new: true}
+        )
+        return res.status(201).send(updatedIssue)
+
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+})
+
+issuesRouter.put('/downvotes/:issueId', async (req, res, next) => {
+    try {
+        const updatedIssue = await Issue.findByIdAndUpdate(
+            req.params.issueId,
+            {
+                $addToSet: {downvotes: req.auth._id},
+                $pull: {upvotes: req.auth._id}
+            },
+            {new: true}
+        )
+        return res.status(201).send(updatedIssue)
+
     } catch (error) {
         res.status(500)
         return next(error)

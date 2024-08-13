@@ -135,6 +135,38 @@ function UserProvider(props){
         }
     }
 
+    async function handleUpvotes(issueId){
+        try {
+           const res = await userAxios.put(`/api/main/issues/upvotes/${issueId}`)
+           console.log(res.data)
+           setAllIssues(prevIssues => prevIssues.map(issue => issue._id === issueId ? res.data : issue)) 
+           setUserState(prevUserState => {
+            return {
+                ...prevUserState,
+                issues: prevUserState.issues.map(issue => issues._id === issuedId ? res.data : issue)
+            }
+           })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function handleDownvotes(issueId){
+        try {
+           const res = await userAxios.put(`/api/main/issues/downvotes/${issueId}`)
+           console.log(res.data)
+           setAllIssues(prevIssues => prevIssues.map(issue => issue._id === issueId ? res.data : issue)) 
+           setUserState(prevUserState => {
+            return {
+                ...prevUserState,
+                issues: prevUserState.issues.map(issue => issues._id === issuedId ? res.data : issue)
+            }
+           })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     console.log(userState)
 
     return(
@@ -148,7 +180,9 @@ function UserProvider(props){
             getUserIssues,
             addIssue,
             allIssues,
-            getAllIssues
+            getAllIssues,
+            handleUpvotes,
+            handleDownvotes
         }}>
             {props.children}
         </UserContext.Provider>
