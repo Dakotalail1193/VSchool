@@ -26,6 +26,7 @@ function CommentForm(){
             <input name="username"
             value = {formData.username}
             onChange={handleChange} />
+            
             <input name="comment"
             value = {formData.comment}
             onChange={handleChange}  />

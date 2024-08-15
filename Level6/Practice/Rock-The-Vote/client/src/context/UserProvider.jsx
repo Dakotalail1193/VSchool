@@ -22,7 +22,7 @@ function UserProvider(props){
 
     const [userState, setUserState] = useState(initState)
     const [allIssues, setAllIssues] = useState([])
-    const [comments, setComments] = useState([])
+    const [allComments, setAllComments] = useState([])
 
     async function signup(creds){
         try {
