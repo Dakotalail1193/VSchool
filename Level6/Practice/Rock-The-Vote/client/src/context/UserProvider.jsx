@@ -22,6 +22,7 @@ function UserProvider(props){
 
     const [userState, setUserState] = useState(initState)
     const [allIssues, setAllIssues] = useState([])
+    const [comments, setComments] = useState([])
 
     async function signup(creds){
         try {
@@ -62,6 +63,7 @@ function UserProvider(props){
         }
     }
 
+    
     async function logout(){
         try {
             localStorage.removeItem("user")
@@ -135,6 +137,22 @@ function UserProvider(props){
         }
     }
 
+    // function deleteIssue(issueId){
+    //     userAxios.delete(`api/main/issue/${issueId}`)
+    //     .then(res =>{getUserIssues()
+    //                  getAllIssues()}) 
+    //      {setAllIssues(prevIssue => prevIssue.filter (issue => issue._id !== issueId))})
+    //     .catch(err => console.log(err))
+    // }
+
+    // function editIssue(updates, issueId){
+    //     axios.put(`/api/main/issues/${issueId}`, updates)
+    //     .then(res => {
+    //         setAllIssues(prevIssue => prevIssue.map (issue => issue._id !== issueId ? issue : res.data))
+    //     })
+    //     .catch(err => console.log(err))
+    // }
+
     async function handleUpvotes(issueId){
         try {
            const res = await userAxios.put(`/api/main/issues/upvotes/${issueId}`)
@@ -143,7 +161,7 @@ function UserProvider(props){
            setUserState(prevUserState => {
             return {
                 ...prevUserState,
-                issues: prevUserState.issues.map(issue => issues._id === issuedId ? res.data : issue)
+                issues: prevUserState.issues.map(issue => issue._id === issueId ? res.data : issue)
             }
            })
         } catch (error) {
@@ -159,7 +177,7 @@ function UserProvider(props){
            setUserState(prevUserState => {
             return {
                 ...prevUserState,
-                issues: prevUserState.issues.map(issue => issues._id === issuedId ? res.data : issue)
+                issues: prevUserState.issues.map(issue => issue._id === issueId ? res.data : issue)
             }
            })
         } catch (error) {
@@ -174,6 +192,8 @@ function UserProvider(props){
             ...userState, 
             signup, 
             login, 
+            // editIssue,
+            // deleteIssue,
             logout,
             handleAuthErr,
             resetAuthErr,

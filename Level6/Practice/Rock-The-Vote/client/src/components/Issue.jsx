@@ -1,10 +1,11 @@
 import { useContext } from "react"
 import { UserContext } from "../context/UserProvider"
 
+
 function Issue(props){
 
     const {title, description, imgUrl, userId, username, _id, upvotes, downvotes} = props
-    const {user, handleUpvotes, handleDownvotes} = useContext(UserContext)
+    const {user, handleUpvotes, handleDownvotes, deleteIssue, editIssue} = useContext(UserContext)
 
     console.log("userId:", userId)
     console.log("user._id:", user._id)
