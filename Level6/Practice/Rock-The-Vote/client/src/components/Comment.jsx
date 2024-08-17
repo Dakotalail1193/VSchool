@@ -1,20 +1,20 @@
-import React, { useContext} from "react";
-import { UserContext } from "../context/UserProvider";
+// import React, { useContext} from "react";
+// import { UserContext } from "../context/UserProvider";
 
-function Comment(props){
+// function Comment(props){
 
-const {username, comment, userId, _id} = props
-const {user} = useContext
+// const {username, comment, userId, _id} = props
+// const {user, comments} = useContext(UserContext)
 
-    return(
-        <>
-            <div>
-            <h4>{comment.user.username}</h4>
-            <p>{comment.comment}</p>
+//     return(
+//         <>
+//             <div>
+//             <h4>{username}</h4>
+//             <p>{comments}</p>
 
-            </div>
-        </>
-    )
-}
+//             </div>
+//         </>
+//     )
+// }
 
-export default Comment
+// export default Comment

@@ -1,14 +1,16 @@
-import React, { useState} from "react";
+import React, { useState, useContext} from "react";
 import { UserContext } from "../context/UserProvider";
 
-function CommentForm(){
+function CommentForm(props){
 
     const initState = {
-        username: '',
-        comment: ''
+        comment: '',
+       
     }
 
     const [formData, setFormData] = useState(initState)
+    const { addComment} = useContext(UserContext)
+    const {issueId} = props
 
     function handleChange(e){
         const {name, value} = e.target
@@ -20,14 +22,23 @@ function CommentForm(){
             })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addComment(issueId, formData)
+        setFormData({
+            comment: ""
+
+        })
+
+    }
+
+
     return(
         <>
-        <form>
-            <input name="username"
-            value = {formData.username}
-            onChange={handleChange} />
+        <form onSubmit={handleSubmit}>
+           {/* <h4>{username}</h4> */}
             
-            <input name="comment"
+            <textarea name="comment"
             value = {formData.comment}
             onChange={handleChange}  />
 

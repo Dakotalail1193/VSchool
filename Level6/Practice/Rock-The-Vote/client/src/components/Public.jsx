@@ -4,10 +4,11 @@ import Issue from './Issue';
 
 function Public() {
 
-    const { getAllIssues, allIssues} = useContext(UserContext)
+    const { getAllIssues, allIssues, getComment} = useContext(UserContext)
 
     useEffect(()=>{
         getAllIssues()
+        getComment()
     }, [])
 
     const issueElements = allIssues.map(issue => {

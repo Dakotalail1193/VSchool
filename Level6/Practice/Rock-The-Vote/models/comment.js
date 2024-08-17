@@ -6,13 +6,13 @@ const commentScehma = new Schema({
         type: String,
         required: true
     },
-    userId:{
-        type: Schema.Types.ObjectId,
-        ref:"User"
-    },
     username:{
         type: String
     },
+    userId:{
+        type: Schema.Types.ObjectId,
+        ref:"User"
+    },    
     issueId:{
         type: Schema.Types.ObjectId,
         ref:"Issue"

@@ -29,7 +29,11 @@ const issueSchema = new Schema({
     downvotes: [{
         type: Schema.Types.ObjectId,
         ref: "User"
-    }]
+    }],
+    comments:{
+        type: Array,
+        default: []
+    }
     
 
 })
