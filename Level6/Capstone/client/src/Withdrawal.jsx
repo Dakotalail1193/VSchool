@@ -5,8 +5,8 @@ import AddWithdrawalForm from './AddWithdrawalForm'
 function Withdrawal(props){
     const {title, description, withdrawal, _id} = props
     const {deleteWithdrawal, editWithdrawal} = useContext(Context)
-    const [editToggle, setEditToggle] = useState(false)       
-    
+    const [editToggle, setEditToggle] = useState(false)
+
     return(
         <>
         <div className='withdrawal'>

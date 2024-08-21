@@ -77,9 +77,7 @@ function ContextProvider(props){
         } catch (error) {
             console.log(error)
         }
-        
-        // withdrawal.map( item => console.log("test"))
-        
+                
         }
     
     // pull in withdrawal context

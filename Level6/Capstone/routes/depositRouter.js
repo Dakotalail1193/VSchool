@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require ('express')
 const depositRouter = express.Router()
-const Deposit = ('../model/deposit')
+const Deposit = require('../model/deposit')
 
 depositRouter.get("/", async(req, res, next) => {
     try {
@@ -27,7 +27,7 @@ depositRouter.delete("/:depositId" , async (req, res, next) => {
     try {
         const depositId = req.params.depositId
         const deletedDeposit = await Deposit.findByIdAndDelete(depositId)
-        return res.status(200).send(`Succesfully deleted ${deletedDeposit.title}`)  
+        return res.status(200).send(`Successfully deleted ${deletedDeposit.title}`)  
     } catch (err) {
         res.status(500)
         return next(err)

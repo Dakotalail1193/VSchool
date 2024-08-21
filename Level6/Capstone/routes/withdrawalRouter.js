@@ -1,6 +1,8 @@
-express = require('express')
+const express = require('express')
 const withdrawalRouter = express.Router()
 const Withdrawal = require('../model/withdrawal')
+
+
 
 withdrawalRouter.get("/", async(req, res, next) => {
     try {
@@ -49,5 +51,6 @@ withdrawalRouter.put("/:withdrawalId", async(req, res, next) => {
      return next(err)
     }     
    })
+
 
 module.exports = withdrawalRouter
