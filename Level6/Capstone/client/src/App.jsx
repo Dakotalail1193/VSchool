@@ -1,74 +1,23 @@
-import React, {useEffect, useContext} from 'react'
+import React, { useContext } from "react";
+import Auth from "./Auth";
+import Home from "./Home"
 import { Context } from './ContextProvider/Context'
-import Deposit from './Deposit'
-import Withdrawal from './Withdrawal'
-import AddDepositForm from './AddDepositForm'
-import AddWithdrawalForm from './AddWithdrawalForm'
-
+import { Routes, Route, Navigate } from "react-router-dom"
 
 function App(){
-    const {deposit, withdrawal, getDeposit, getWithdrawal, addDeposit, addWithdrawal, deleteDeposit, deleteWithdrawal, withdrawalTotal} = useContext(Context)
 
-    useEffect(() => {
-        getDeposit();
-        getWithdrawal()
-        withdrawalTotal()       
-    }, [])
+    const {token} = useContext(Context)
 
-    const totalWithdrawal = withdrawal.reduce((total, num) =>{
-        total += num.withdrawal
-        return total
-    },0)
-    
-
-    const totalDeposit = deposit.reduce((total, num) => {
-        total += num.deposit
-        return total
-    }, 0)
-
-    const final = totalDeposit - totalWithdrawal
-    console.log(final)
-    
-    
     return(
         <>
-        <div className='header'>
-        <h1>Budget Tracker</h1>
+        <div id="app">
+            <Routes>
+                <Route path="/" element={token ? <Navigate to = "/home" /> :<Auth/>}/>
+                <Route path="home" element={token ? <Home/> : <Navigate to = "/"/>}/>
+            </Routes>
         </div>
-    <div className='container'>
-
-        <div className='deposit-container'>
-            <AddDepositForm
-            submit={addDeposit}
-            btnText="Add Deposit"
-            />
-            {deposit.map(deposit => 
-            <Deposit {...deposit} 
-            key= {deposit._id} 
-            deleteDeposit={deleteDeposit}/>)}
-            <h1>Total: ${totalDeposit}</h1>
-        </div >
-
-
-        <div className='withdrawal-container'>
-            <AddWithdrawalForm
-            submit={addWithdrawal}
-            btnText="Add Withdrawal"
-            />
-            {withdrawal.map(withdrawal =>
-            <Withdrawal {...withdrawal} 
-            key= {withdrawal._id} 
-            deleteWithdrawal={deleteWithdrawal}/>)}
-            <h1>Total: ${totalWithdrawal}</h1>
-        </div >
-    </div>
-
-    <div className='final'><h1>Monthly Remainder:${final}</h1></div>
-
         </>
     )
-
-
 }
 
 export default App

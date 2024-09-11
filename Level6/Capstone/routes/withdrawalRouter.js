@@ -6,7 +6,7 @@ const Withdrawal = require('../model/withdrawal')
 
 withdrawalRouter.get("/", async(req, res, next) => {
     try {
-        const foundWithdrawal = await Withdrawal.find()
+        const foundWithdrawal = await Withdrawal.find({userId: req.auth._id})
         console.log(foundWithdrawal)         
         return res.status(200).send(foundWithdrawal)        
     } catch (err) {
@@ -17,6 +17,7 @@ withdrawalRouter.get("/", async(req, res, next) => {
 
 withdrawalRouter.post("/", async(req, res, next) => {
     try{
+        req.body.userId = req.auth._id
         const newWithdrawal = new Withdrawal(req.body)
         const savedWithdrawal = await newWithdrawal.save()        
         return res.status(200).send(savedWithdrawal)

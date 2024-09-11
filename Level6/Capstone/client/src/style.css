@@ -12,6 +12,29 @@ body{
   background-color:aquamarine;
 }
 
+.auth-form{
+  margin: auto;
+  margin-top: 20%;
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: cyan;
+  padding: 20px;
+  width: 300px;
+  height:fit-content;
+  border: 3px ridge grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;  
+}
+
+.auth-button{
+  margin: auto;
+  display: flex;  
+  align-items: center;
+}
+
+
+
 .header{
   text-align: center;
   margin-bottom: 30px;

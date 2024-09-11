@@ -4,7 +4,7 @@ const Deposit = require('../model/deposit')
 
 depositRouter.get("/", async(req, res, next) => {
     try {
-        const foundDeposit = await Deposit.find()        
+        const foundDeposit = await Deposit.find({userId: req.auth._id})        
         return res.status(200).send(foundDeposit)
     } catch (err) {
         res.status(500)
@@ -14,6 +14,7 @@ depositRouter.get("/", async(req, res, next) => {
 
 depositRouter.post("/", async(req, res, next) => {
     try{
+        req.body.userId = req.auth._id
         const newDeposit = new Deposit(req.body)
         const savedDeposit = await newDeposit.save()        
         return res.status(200).send(savedDeposit)

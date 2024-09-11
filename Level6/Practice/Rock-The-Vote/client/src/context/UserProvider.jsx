@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import axios from "axios"
 
 
@@ -176,14 +176,14 @@ function UserProvider(props){
         .catch(err => console.log(err))
     }
 
-    function editIssue(issueId, updates){
+    function editIssue(updates, issueId){
         userAxios.put(`/api/main/issues/${issueId}`, updates)
         .then(res => {
-            setAllIssues(prevIssue => prevIssue.map (issue => issue._id !== issueId ? issue : res.data))
-            setUserState(prevState => ({
-                ...prevState,
-                issues: prevState.issues.map (issue => issue._id !== issueId ? issue : res.data)
-            }))
+            setAllIssues(prevIssue => prevIssue.map (issue => issue._id !== issueId ? issue : res.data));
+            // setUserState(prevUserState => ({
+            //     ...prevUserState,
+            //     issues: prevUserState.issues.map (issue => issue._id !== issueId ? issue : res.data)
+            // }))
         })
         .catch(err => console.log(err))
     }
@@ -219,6 +219,12 @@ function UserProvider(props){
             console.log(error)
         }
     }
+
+    useEffect ( () => {
+        getUserIssues()
+        getAllIssues()
+        
+    }, [])
 
     console.log(userState)
 
