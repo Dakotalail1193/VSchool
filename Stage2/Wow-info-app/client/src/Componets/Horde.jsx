@@ -15,7 +15,7 @@ function Horde(){
                     <h1>Beset by enemies on all sides, these outcasts have forged a union they hope will ensure their mutual survival</h1>
                 </div>
                 <div className="horde-races">                    
-                    {race}
+                    {hordeRace}
                 </div>
                 <button onClick={()=> navigate("/")} className="horde-return">Return to Main Page</button>
                 

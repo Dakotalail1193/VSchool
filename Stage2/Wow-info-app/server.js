@@ -18,9 +18,8 @@ async function connectToDb(){
 
 connectToDb()
 
-app.use('/api/horde', require ('./routes/hordeRouter'))
-app.use('/alliance', require ('./routes/allianceRouter'))
-app.use('/race', require ('./routes/raceRouter'))
+
+app.use('/api/race', require ('./routes/raceRouter'))
 
 app.use ((err, req, res, next) => {
     console.log(err)

@@ -4,7 +4,7 @@ const Race = require('../models/races')
 
 raceRouter.get("/", async(req, res, next) => {
     try {
-        const foundRace = await Race.find(req.body)
+        const foundRace = await Race.find()
         return res.status(200).send(foundRace)
     } catch (err) {
         res.status(500)
@@ -19,7 +19,7 @@ raceRouter.post("/", async (req,res,next) =>{
         return res.status(201).send(savedRace)
     } catch (err) {
         res.status(500)
-        return next(error)
+        return next(err)
     }
 })
 
