@@ -12,7 +12,7 @@ function Alliance(){
                 <div className="alliance-bio">
                     <h1>The Alliance consists of four races. The noble Humans, the adventurous Dwarves, the enigmatic Night Elves, and the ingenious Gnomes.</h1>
                     <br/>
-                    <h1>Bound by a loathing for all things demonic, they fight to restore order in this war-torn world.</h1>
+                    <h1>Bound by aloathing for all things demonic, they ight to restore order in this war-torn world.</h1>
                 </div>
             <div className="alliance-races">
                 {allianceRace}

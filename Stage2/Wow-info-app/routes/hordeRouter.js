@@ -4,7 +4,8 @@ const Horde = require ('../models/horde')
 
 hordeRouter.get("/", async(req, res, next) => {
     try {
-        const foundHorde = await Horde.find(req.body)
+        const foundHorde = await Horde.find()
+        console.log(foundHorde)
         return res.status(200).send(foundHorde)
     } catch (err) {
         res.status(500)
